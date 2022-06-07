@@ -1,5 +1,5 @@
 locals {
-  lightlytics_api_url_collection = var.pvl_subnets_ids == [] ? "https://${var.environment}.${var.domain_name}" : "https://${var.environment}-${data.aws_region.current.name}-pvl.${var.domain_name}"
+  lightlytics_api_url_collection = length(var.pvl_subnets_ids) == 0 ? "https://${var.environment}.${var.domain_name}" : "https://${var.environment}-${data.aws_region.current.name}-pvl.${var.domain_name}"
 }
 
 locals {
