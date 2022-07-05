@@ -1,5 +1,5 @@
 data "aws_s3_bucket" "flowlogs_bucket" {
-  bucket = var.create_new_flowlogs_bucket == true ? aws_s3_bucket.lightlytics-flow-logs-bucket[0].id : var.flowlogs_bucket_name
+  bucket = var.create_new_flowlogs_bucket == true ? aws_s3_bucket.lightlytics-flow-logs-bucket.id : var.flowlogs_bucket_name
 }
 
 resource "aws_s3_bucket" "lightlytics-flow-logs-bucket" {
