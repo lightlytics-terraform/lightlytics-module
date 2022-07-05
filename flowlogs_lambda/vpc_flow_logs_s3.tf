@@ -1,5 +1,5 @@
 data "aws_s3_bucket" "flowlogs_bucket" {
-  bucket = var.create_new_flowlogs_bucket == true ? aws_s3_bucket.lightlytics-flow-logs-bucket.id : var.flowlogs_bucket_name
+  bucket = var.create_new_flowlogs_bucket == true ? aws_s3_bucket.lightlytics-flow-logs-bucket[0].bucket_id : var.flowlogs_bucket_name
 }
 
 resource "aws_s3_bucket" "lightlytics-flow-logs-bucket" {
@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "lightlytics-flow-logs-bucket" {
 
 resource "aws_flow_log" "lightlytics-flow-logs" {
   for_each = toset(var.vpc_flowlogs_ids)
-  log_destination      = data.aws_s3_bucket.flowlogs_bucket.arn
+  log_destination      = data.aws_s3_bucket.flowlogs_bucket.bucket_arn
   log_destination_type = "s3"
   traffic_type         = "ALL"
   vpc_id               = each.value
