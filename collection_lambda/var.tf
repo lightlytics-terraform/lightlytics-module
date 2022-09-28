@@ -66,3 +66,6 @@ variable "pvl_security_group_ids" {
   type = list(string)
   default = []
 }
+variable "private_dns_enabled" {
+  default = false
+}
