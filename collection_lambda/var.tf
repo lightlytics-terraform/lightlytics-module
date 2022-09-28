@@ -62,10 +62,6 @@ variable "pvl_subnets_ids" {
   type = list(string)
   default = []
 }
-variable "pvl_subnets" {
-  type = list(string)
-  default = []
-}
 variable "pvl_security_group_ids" {
   type = list(string)
   default = []
