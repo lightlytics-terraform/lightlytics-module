@@ -3,7 +3,7 @@ resource "aws_vpc_endpoint" "lightlytics_endpoint" {
   vpc_id                  = local.pvl_vpc
   service_name            = var.lightlytics_endpoint_service_name
   subnet_ids              = local.pvl_subnets
-  private_dns_enabled     = true
+  private_dns_enabled     = var.private_dns_enabled
   vpc_endpoint_type = "Interface"
   security_group_ids = local.pvl_security_groups
 }
