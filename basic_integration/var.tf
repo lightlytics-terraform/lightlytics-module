@@ -51,11 +51,11 @@ variable "lambda_init_max_retry" {
 
 ###############------------Optional-----------#############
 
-variable "collect_flow_logs_enabled" {
+variable "enable_flowlogs" {
   default = true
   type = bool
 }
-variable "collect_collection_enabled" {
+variable "enable_cloudtrail" {
   default = true
   type = bool
 }

@@ -11,8 +11,8 @@ Module Input Variables
 - `lightlytics_account_externalID`    = Lightlytics external id
 - `lightlytics_auth_token`            = Lightlytics auth token
 - `create_cloud_trail`                = Optional (Default to False)
-- `collect_flow_logs_enabled`         = Optional (Default to True)
-- `collect_collection_enabled`        = Optional (Default to True)
+- `enable_flowlogs`         = Optional (Default to True)
+- `enable_cloudtrail`        = Optional (Default to True)
 - `s3_force_destroy`                  = Optional (Default to True)
 
 
@@ -47,6 +47,6 @@ Adding AWS provider
   
 - The following vars are optional:
   - variable "s3_force_destroy" {}
-  - variable "collect_flow_logs_enabled" {}
-  - variable "collect_collection_enabled" {}
+  - variable "enable_flowlogs" {}
+  - variable "enable_cloudtrail" {}
   - variable "create_cloud_trail" {}

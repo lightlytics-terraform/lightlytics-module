@@ -30,7 +30,7 @@ Adding AWS provider
 
 - MUST USE THE LIGHTLYTICS PROVIDER FOR CREATING THE NEW INTEGRATION ACCOUNT:
   https://github.com/lightlytics-terraform/lightlytics-provider.git
-  - Must create basic_integration module with the var -> "collect_collection_enabled=true"
+  - Must create basic_integration module with the var -> "enable_cloudtrail=true"
 
 
 - The following vars are required:
