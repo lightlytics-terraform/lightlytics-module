@@ -7,7 +7,7 @@ output "lightlytics_cloudwatch_role" {
 }
 
 output "lightlytics_flowlogs_role" {
-  value = aws_iam_role.lightlytics-FlowLogs-lambda-role[0].arn
+  value = var.enable_flowlogs ? aws_iam_role.lightlytics-FlowLogs-lambda-role[0].arn : null
 }
 
 output "pvl_vpc" {
