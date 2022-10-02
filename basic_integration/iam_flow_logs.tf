@@ -35,7 +35,12 @@ resource "aws_iam_policy" "lightlytics-FlowLogs-lambda-policy" {
           "s3:GetBucketLocation",
           "s3:GetObjectVersion",
           "s3:GetLifecycleConfiguration",
-          "ec2:DescribeFlowLogs"
+          "ec2:DescribeFlowLogs",
+          "ec2:CreateNetworkInterface",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DeleteNetworkInterface",
+          "ec2:AssignPrivateIpAddresses",
+          "ec2:UnassignPrivateIpAddresses",
         ],
         Effect = "Allow",
         Resource = "*"
