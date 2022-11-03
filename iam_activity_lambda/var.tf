@@ -1,7 +1,7 @@
 ###############------------Global-----------#############
 
 variable "environment" {}
-variable "aws_account_id" {}
+variable "iam_activity_bucket_name" {}
 variable "lightlytics_collection_token" {
   sensitive = true
 }
@@ -40,28 +40,6 @@ variable "lambda_iam_activity_max_retry" {
 #variable "lambda_iam_activity_logs_architectures" {                         # requires aws provider 3.61
 #  default = ["x86_64"]
 #}
-variable "iam_activity_bucket_lifecycle_rule" {
-  type = list(object({
-    id = string
-    prefix = string
-    status = string
-    days = number
-  }))
-  default = [
-    {
-      id = "purge"
-      prefix = "AWSLogs/"
-      status = "Enabled"
-      days = 1
-    }
-  ]
-}
-
-###############------------Required-----------#############
-
-variable "iam_activity_bucket_name" {
-  default = ""
-}
 
 ################------------Private link-----------#############
 
