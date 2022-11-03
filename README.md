@@ -50,6 +50,17 @@ module "flow-logs-us-east-1" {
   vpc_flowlogs_ids                             = [""]
   lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
 }
+
+module "lightlytics-iam_activity-us-east-1" {
+  source = "github.com/lightlytics-terraform/lightlytics-module/iam_activity_lambda"
+  providers = {
+    aws = aws.us-east-1
+  }
+  environment                                  = "<Lightlytics_env>"
+  lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  iam_activity_bucket_name                     = ""
+  lightlytics_iam_activity_role                = module.lightlytics-module.lightlytics_iam_activity_role
+}
 ```
 
 
@@ -72,6 +83,11 @@ flowlogs_lambda
 -----
 
 - Create flowlogs lambda
+
+iam_activity_lambda
+-----
+
+- Create iam activity lambda
 
 cloudwatch_templates
 -----
