@@ -67,6 +67,10 @@ variable "create_cloud_trail" {
   type = bool
   default = false
 }
+variable "enable_iam_activity" {
+  default = true
+  type = bool
+}
 
 ###############------------Private link-----------#############
 

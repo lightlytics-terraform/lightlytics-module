@@ -10,6 +10,10 @@ output "lightlytics_flowlogs_role" {
   value = var.enable_flowlogs ? aws_iam_role.lightlytics-FlowLogs-lambda-role[0].arn : null
 }
 
+output "lightlytics_iam_activity_role" {
+  value = var.enable_iam_activity ? aws_iam_role.lightlytics-IamActivity-lambda-role[0].arn : null
+}
+
 output "pvl_vpc" {
   value = local.pvl_vpc
 }
