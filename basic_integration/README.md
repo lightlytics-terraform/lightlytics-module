@@ -8,7 +8,7 @@ Inputs
 ------
 | Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
 | :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g "https://mike.lightlytics.com"                                           | `string` | Yes       | `null`  |
+| environment                       | Your environment URL including https:// | e.g `https://mike.lightlytics.com`                                           | `string` | Yes       | `null`  |
 | aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | `null`  |
 | Lightlytics_internal_accountID    | Lightlytics internal id                 |                                                                              | `string` | Yes       | `null`  |
 | lightlytics_account_externalID    | Lightlytics external id                 |                                                                              | `string` | Yes       | `null`  |
