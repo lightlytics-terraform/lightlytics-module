@@ -7,14 +7,14 @@ Inputs
 ------
 | Variable Name                     | Description                             | Notes                                                                        | Type           | Required? | Default |
 | :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g `https://mike.lightlytics.com`                                           | `string`       | Yes       | `null`  |
+| environment                       | Your environment URL including https:// | e.g `https://mike.lightlytics.com`                                           | `string`       | Yes       | n/a  |
 | create_cloud_trail                |                                         |                                                                              | `bool`         | No        | `false` |
 | enable_flowlogs                   |                                         |                                                                              | `bool`         | No        | `true`  |
 | enable_cloudtrail                 |                                         |                                                                              | `bool`         | No        | `true`  |
-| lightlytics_flowlogs_role         | VPC flowlogs role arn                   |																				 | `string`       | Yes       | `null`  |
-| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs   |   																			 | `list(string)` | No        | `null`  |
+| lightlytics_flowlogs_role         | VPC flowlogs role arn                   |																				 | `string`       | Yes       | n/a  |
+| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs   |   																			 | `list(string)` | No        | n/a  |
 | create_new_flowlogs_bucket		|                                         |                                                                      	     | `bool`         | No        | `false` |
-| flowlogs_bucket_name              |                                         | Required if `create_new_flowlogs_bucket` set to false                        | `string`       | No        | `null`  |    
+| flowlogs_bucket_name              |                                         | Required if `create_new_flowlogs_bucket` set to false                        | `string`       | No        | n/a  |    
 | s3_force_destroy                  |                                         |                                                                              | `bool`         | No        | `true`  |
 
 
