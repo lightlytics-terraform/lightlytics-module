@@ -13,10 +13,6 @@ Inputs
 | Lightlytics_internal_accountID    | Lightlytics internal id                 |                                                                              | `string` | Yes       | `null`  |
 | lightlytics_account_externalID    | Lightlytics external id                 |                                                                              | `string` | Yes       | `null`  |
 | lightlytics_auth_token            | Lightlytics auth token                  |                                                                              | `string` | Yes       | `null`  | 
-| create_cloud_trail                |                                         |                                                                              | `bool`   | No        | `false` |
-| enable_flowlogs                   |                                         |                                                                              | `bool`   | No        | `true`  |
-| enable_cloudtrail                 |                                         |                                                                              | `bool`   | No        | `true`  |
-| s3_force_destroy                  |                                         |                                                                              | `bool`   | No        | `true`  |
 
 
 Usage
