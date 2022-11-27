@@ -1,19 +1,22 @@
-Lightlytics terraform module - basic integration
+Lightlytics Terraform Module - basic integration
+===========
+This module is in charge of connecting your AWS account to your Lightlytics workspace, and triggering your cloud account initial scan.
 ===========
 
 
-Module Input Variables
-----------------------
-
-- `environment`                       = Lightlytics environment name
-- `aws_account_id`                    = AWS account ID
-- `Lightlytics_internal_accountID`    = Lightlytics external id
-- `lightlytics_account_externalID`    = Lightlytics external id
-- `lightlytics_auth_token`            = Lightlytics auth token
-- `create_cloud_trail`                = Optional (Default to False)
-- `enable_flowlogs`         = Optional (Default to True)
-- `enable_cloudtrail`        = Optional (Default to True)
-- `s3_force_destroy`                  = Optional (Default to True)
+Inputs Variables
+-----------------
+| Variable Name                     | Description                             | Notes                                                                        | Required? | Default |
+| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:----------|:--------|
+| environment                       | Your environment URL including https:// | e.g "https://mike.lightlytics.com"                                           | Yes       | `null`  |
+| aws_account_id                    | Your AWS account ID                     |                                                                              | Yes       | `null`  |
+| Lightlytics_internal_accountID    | Lightlytics internal id                 |                                                                              | Yes       | `null`  |
+| lightlytics_account_externalID    | Lightlytics external id                 |                                                                              | Yes       | `null`  |
+| lightlytics_auth_token            | Lightlytics auth token                  |                                                                              | Yes       | `null`  | 
+| create_cloud_trail                |                                         |                                                                              | No        | `false` |
+| enable_flowlogs                   |                                         |                                                                              | No        | `true`  |
+| enable_cloudtrail                 |                                         |                                                                              | No        | `true`  |
+| s3_force_destroy                  |                                         |                                                                              | No        | `true`  |
 
 
 Usage
@@ -29,24 +32,3 @@ module "lightlytics" {
   lightlytics_auth_token                       = "lightlytics_account.<Lightlytics_provider_resource>.account_auth_token"
 }
 ```
-
-
-Adding AWS provider
------
-
-- MUST USE THE LIGHTLYTICS PROVIDER FOR CREATING THE NEW INTEGRATION ACCOUNT:
-  https://github.com/lightlytics-terraform/lightlytics-provider.git
-
-- The following vars are required:
-  - variable "environment" {}
-  - variable "aws_account_id" {}
-  - variable "Lightlytics_internal_accountID" {}
-  - variable "lightlytics_account_externalID" {}
-  - variable "lightlytics_auth_token" {}
-  
-  
-- The following vars are optional:
-  - variable "s3_force_destroy" {}
-  - variable "enable_flowlogs" {}
-  - variable "enable_cloudtrail" {}
-  - variable "create_cloud_trail" {}
