@@ -1,6 +1,8 @@
 Lightlytics Terraform Module - Collection Lambda
 ===========
-This module enables Lightlytics to receive real-time events for each deployment Region in your AWS account via AWS CloudTrail.
+This module enables Lightlytics to receive real-time events of your AWS account based on AWS CloudTrail.
+Integrating with this module will help you track cloud configuration changes with a complete context of who, what, where, and when
+while providing impact analysis of your cloud environment in real time.
 
 
 Inputs
