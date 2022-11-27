@@ -7,7 +7,7 @@ Inputs
 ------
 | Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
 | :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g "https://mike.lightlytics.com"                                           | `string` | Yes       | `null`  |
+| environment                       | Your environment URL including https:// | e.g `https://mike.lightlytics.com`                                           | `string` | Yes       | `null`  |
 | aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | `null`  |
 | lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | `null`  |
 | lightlytics_cloudwatch_role       | CloudWatch role arn                     |                                                                              | `string` | Yes       | `null`  |
