@@ -1,17 +1,21 @@
-Lightlytics terraform module - flowlogs lambda
+Lightlytics Terraform Module - Flowlogs Lambda
 ===========
 
 
-Module Input Variables
-----------------------
 
-- `environment`                       = Lightlytics environment name
-- `lightlytics_collection_token`      = Lightlytics collection token
-- `lightlytics_flowlogs_role`         = Flowlogs role arn
-- `vpc_flowlogs_ids`                  = List vpc ids for creating vpc flowlogs
-- `flowlogs_bucket_name`              = Optional (Must enter if var "create_new_flowlogs_bucket" set to false)
-- `create_new_flowlogs_bucket`        = Optional (Default to False)
-- `s3_force_destroy`                  = Optional (Default to True)
+Inputs
+------
+| Variable Name                     | Description                             | Notes                                                                        | Type           | Required? | Default |
+| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------------|:--------- |:--------|
+| environment                       | Your environment URL including https:// | e.g `https://mike.lightlytics.com`                                           | `string`       | Yes       | `null`  |
+| create_cloud_trail                |                                         |                                                                              | `bool`         | No        | `false` |
+| enable_flowlogs                   |                                         |                                                                              | `bool`         | No        | `true`  |
+| enable_cloudtrail                 |                                         |                                                                              | `bool`         | No        | `true`  |
+| lightlytics_flowlogs_role         | VPC flowlogs role arn                   |																				 | `string`       | Yes       | `null`  |
+| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs   |   																			 | `list(string)` | No        | `null`  |
+| create_new_flowlogs_bucket		|                                         |                                                                      	     | `bool`         | No        | `false` |
+| flowlogs_bucket_name              |                                         | Required if `create_new_flowlogs_bucket` set to false                        | `string`       | No        | `null`  |    
+| s3_force_destroy                  |                                         |                                                                              | `bool`         | No        | `true`  |
 
 
 Usage
@@ -35,15 +39,3 @@ Adding AWS provider
 - MUST USE THE LIGHTLYTICS PROVIDER FOR CREATING THE NEW INTEGRATION ACCOUNT:
   https://github.com/lightlytics-terraform/lightlytics-provider.git
   - Must create basic_integration module with the var -> "enable_cloudtrail=true"
-
-
-- The following vars are required:
-  - variable "environment" {}
-  - variable "lightlytics_collection_token" {}
-  - variable "lightlytics_flowlogs_role" {}
-  
-- The following vars are optional:
-  - variable "s3_force_destroy" {}
-  - variable "vpc_flowlogs_ids" {}
-  - variable "flowlogs_bucket_name" {}
-  - variable "create_new_flowlogs_bucket" {}
