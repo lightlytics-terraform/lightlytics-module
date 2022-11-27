@@ -1,14 +1,20 @@
-Lightlytics terraform module - collection lambda
+Lightlytics Terraform Module - Collection Lambda
 ===========
+This module enables Lightlytics to receive real-time events for each deployment Region in your AWS account via AWS CloudTrail.
 
 
-Module Input Variables
-----------------------
+Inputs
+------
+| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
+| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
+| environment                       | Your environment URL including https:// | e.g "https://mike.lightlytics.com"                                           | `string` | Yes       | `null`  |
+| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | `null`  |
+| lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | `null`  |
+| lightlytics_cloudwatch_role       | CloudWatch role arn                     |                                                                              | `string` | Yes       | `null`  |
 
-- `environment`                       = Lightlytics environment name
-- `aws_account_id`                    = AWS account ID
-- `lightlytics_collection_token`      = Lightlytics collection token
-- `lightlytics_cloudwatch_role`       = Cloud watch role arn
+
+
+
 
 
 Usage
@@ -31,10 +37,3 @@ Adding AWS provider
 - MUST USE THE LIGHTLYTICS PROVIDER FOR CREATING THE NEW INTEGRATION ACCOUNT:
   https://github.com/lightlytics-terraform/lightlytics-provider.git
   - Must create basic_integration module with the var -> "enable_cloudtrail=true"
-
-
-- The following vars are required:
-  - variable "environment" {}
-  - variable "aws_account_id" {}
-  - variable "lightlytics_collection_token" {}
-  - variable "lightlytics_cloudwatch_role" {}
