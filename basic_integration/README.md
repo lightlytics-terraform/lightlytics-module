@@ -37,4 +37,4 @@ Getting Help
 -------
 We use GitHub issues for tracking bugs and feature requests. Please use these community resources for getting help:
 * Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q).
-* Contact our support via [Email](support@lightlytics.com).
+* Contact our support via Email at support@lightlytics.com .
