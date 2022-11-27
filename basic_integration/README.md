@@ -1,4 +1,4 @@
-Lightlytics Terraform Module - basic integration
+Lightlytics Terraform Module - Basic Integration
 ===========
 This module is in charge of connecting your AWS account to your Lightlytics workspace, and triggering your cloud account initial scan.
 
