@@ -5,19 +5,20 @@ Integrating with this module will help you track cloud configuration changes wit
 while providing impact analysis of your cloud environment in real time.
 
 
+Requirements
+------------
+- Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
+- Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module while adding the following variable: `enable_cloudtrail = true`
+
+
 Inputs
 ------
 | Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
 | :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g `https://mike.lightlytics.com`                                           | `string` | Yes       | `null`  |
-| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | `null`  |
-| lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | `null`  |
-| lightlytics_cloudwatch_role       | CloudWatch role arn                     |                                                                              | `string` | Yes       | `null`  |
-
-
-
-
-
+| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                            | `string` | Yes       | n/a     |
+| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_cloudwatch_role       | Lightlytic CloudWatch role arn          |                                                                              | `string` | Yes       | n/a     |
 
 Usage
 -----
@@ -25,7 +26,7 @@ Usage
 ```hcl
 module "lightlytics-collection" {
   source = "github.com/lightlytics-terraform/lightlytics-module/collection_lambda"
-  environment                                  = "<Lightlytics_env>"
+  environment                                  = "<https://<env_name>.lightlytics.com>"
   aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
@@ -33,9 +34,14 @@ module "lightlytics-collection" {
 ```
 
 
-Adding AWS provider
------
+Community
+---------
+- Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
 
-- MUST USE THE LIGHTLYTICS PROVIDER FOR CREATING THE NEW INTEGRATION ACCOUNT:
-  https://github.com/lightlytics-terraform/lightlytics-provider.git
-  - Must create basic_integration module with the var -> "enable_cloudtrail=true"
+
+Getting Help
+------------
+Please use these resources for getting help:
+- [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
+- Email: support@lightlytics.com
+
