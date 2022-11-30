@@ -33,7 +33,7 @@ module "flow-logs-us-east-1" {
   source = "github.com/lightlytics-terraform/lightlytics-module/flowlogs_lambda"
   environment                                  = "<https://<env_name>.lightlytics.com>"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
-  vpc_flowlogs_ids                             = [""]
+  vpc_flowlogs_ids                             = ["vpc-1234","vpc-5678"]
   lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
   flowlogs_bucket_name                         = ""
 }
