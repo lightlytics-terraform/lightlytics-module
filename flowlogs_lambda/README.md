@@ -35,7 +35,7 @@ module "flow-logs-us-east-1" {
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   vpc_flowlogs_ids                             = ["vpc-1234","vpc-5678"]
   lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
-  flowlogs_bucket_name                         = ""
+  flowlogs_bucket_name                         = "Your_Flow_Logs_S3_Bucket"
 }
 ```
 
