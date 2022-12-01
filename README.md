@@ -1,28 +1,40 @@
-Lightlytics terraform module for AWS
-===========
+Connect AWS Account to Lightlytics Terraform Module
+===================================================
+A terraform module for connecting AWS account to [Lightlytics](https://www.lightlytics.com/).
 
-A terraform module connecting AWS account to [Lightlytics](https://www.lightlytics.com/).
 
-Module Input Variables
-----------------------
+Prerequisites
+-------------
+- A Lightlytics account
+- Terraform CLI
+- AWS credentials configured for use with Terraform
 
-- `environment`                       = Lightlytics environment name
-- `aws_account_id`                    = AWS account ID
-- `Lightlytics_internal_accountID`    = Lightlytics external id
-- `lightlytics_account_externalID`    = Lightlytics external id
-- `lightlytics_collection_token`      = Lightlytics collection token
+
+Requirements
+------------
+- Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
+
+
+Inputs
+------
+| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
+| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
+| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                           | `string` | Yes       | n/a     |
+| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
+| Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_auth_token            | Lightlytics authentocation token        |                                                                              | `string` | Yes       | n/a     |
 
 
 Usage
 -----
-
 ```hcl
 module "lightlytics" {
   providers = {
     aws = aws.us-east-1
   }
   source = "github.com/lightlytics-terraform/lightlytics-module/basic_integration"
-  environment                                  = "<Lightlytics_env>"
+  environment                                  = "<https://<env_name>.lightlytics.com>"
   aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   Lightlytics_internal_accountID               = "lightlytics_account.<Lightlytics_provider_resource>.id"
   lightlytics_account_externalID               = "lightlytics_account.<Lightlytics_provider_resource>.external_id"
@@ -34,7 +46,7 @@ module "lightlytics-collection-us-east-1" {
   providers = {
     aws = aws.us-east-1
   }
-  environment                                  = "<Lightlytics_env>"
+  environment                                  = "<https://<env_name>.lightlytics.com>"
   aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
@@ -45,9 +57,9 @@ module "flow-logs-us-east-1" {
   providers = {
     aws = aws.us-east-1
   }
-  environment                                  = "<Lightlytics_env>"
+  environment                                  = "<https://<env_name>.lightlytics.com>"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
-  vpc_flowlogs_ids                             = [""]
+  vpc_flowlogs_ids                             = ["vpc-1234","vpc-5678"]
   lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
 }
 ```
@@ -85,3 +97,15 @@ cloudwatch_templates
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 3.70.0 |
+
+
+Community
+---------
+- Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
+
+
+Getting Help
+------------
+Please use these resources for getting help:
+- [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
+- Email: support@lightlytics.com
