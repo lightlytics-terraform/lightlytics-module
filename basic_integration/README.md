@@ -33,6 +33,12 @@ module "lightlytics" {
 }
 ```
 
+
+Documentation
+-------------
+If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
+
+
 Community
 ---------
 - Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
