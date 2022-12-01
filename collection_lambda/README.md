@@ -20,6 +20,7 @@ Inputs
 | lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | n/a     |
 | lightlytics_cloudwatch_role       | Lightlytic CloudWatch role arn          |                                                                              | `string` | Yes       | n/a     |
 
+
 Usage
 -----
 
@@ -32,6 +33,22 @@ module "lightlytics-collection" {
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
 }
 ```
+
+
+Run
+---
+This Terraform module will do the following:
+
+On apply:
+- Create AWS IAM Policy
+- Create AWS IAM Role
+- Create AWS Lambda Function
+- Create AWS IAM Role for Lambda Function
+- CloudWatch Event Rules
+
+On destroy:
+- Delete all above resources
+
 
 Documentation
 -------------
