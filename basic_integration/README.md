@@ -17,7 +17,7 @@ Inputs
 | aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
 | Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
 | lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_auth_token            | Lightlytics authentocation token        |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_auth_token            | Lightlytics authentication token        |                                                                              | `string` | Yes       | n/a     |
 
 
 Usage
