@@ -34,6 +34,21 @@ module "lightlytics" {
 ```
 
 
+Run
+---
+This Terraform module will do the following:
+
+On apply:
+- Create AWS IAM Policy
+- Create AWS IAM Role
+- Create AWS Lambda Function
+- Create AWS IAM Role for Lambda Function
+- Trigger Lambda Function
+
+On destroy:
+- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+
+
 Documentation
 -------------
 If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
