@@ -1,6 +1,6 @@
-Lightlytics Terraform Module - Collection Lambda
-===========
-This module enables Lightlytics to receive real-time events of your AWS account based on AWS CloudTrail.
+Lightlytics Real-Time Events Collection Terraform Module
+========================================================
+This module enables Lightlytics to receive real-time events of your AWS account based on AWS CloudWatch.
 Integrating with this module will help you track cloud configuration changes with a complete context of who, what, where, and when
 while providing impact analysis of your cloud environment in real time.
 
@@ -32,6 +32,10 @@ module "lightlytics-collection" {
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
 }
 ```
+
+Documentation
+-------------
+If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
 
 
 Community
