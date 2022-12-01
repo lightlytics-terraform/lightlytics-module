@@ -1,5 +1,5 @@
-Lightlytics Terraform Module - Flowlogs Lambda
-===========
+Lightlytics Network Traffic (VPC Flow Logs) Terraform Module
+============================================================
 This module is in charge of creating VPC flow logs with a custom format and sending it over to Lightlytics. 
 Integrating with this module will help you analyze and troubleshoot network traffic activity and quickly identify issues in your cloud environments using enriched and detailed logs across VPCs, services, clusters, workloads, network components, and much more.
 
@@ -38,6 +38,11 @@ module "flow-logs-us-east-1" {
   flowlogs_bucket_name                         = "Your_Flow_Logs_S3_Bucket"
 }
 ```
+
+
+Documentation
+-------------
+If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
 
 
 Community
