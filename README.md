@@ -65,6 +65,21 @@ module "flow-logs-us-east-1" {
 ```
 
 
+Run
+---
+This Terraform module will do the following:
+
+On apply:
+- Create AWS IAM Policy
+- Create AWS IAM Role
+- Create AWS Lambda Function
+- Create AWS IAM Role for Lambda Function
+- Trigger Lambda Function
+
+On destroy:
+- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+
+
 ## Feature notes
 
 
@@ -93,7 +108,6 @@ cloudwatch_templates
 
 
 ## Providers
-
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 3.70.0 |
