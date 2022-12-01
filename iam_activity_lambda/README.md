@@ -1,5 +1,7 @@
-Lightlytics Terraform Module - IAM Activity Lambda
-==================================================
+Lightlytics Identity Activity (IAM Logs) Terraform Module
+=========================================================
+This module creates and collects CloudTrail logs to provide visibility of how identities are being assumed and used across your AWS environment.
+Integrating with this module will help you monitor and analyze any identity (Identity Access Management - IAM) activity in your account with automatic correlation to your cloud resources.
 
 
 Requirements
@@ -30,6 +32,11 @@ module "iam-activity-logs-us-east-1" {
   iam_activity_bucket_name                     = "Your_S3_Bucket_Name_Storing_CloudTrail_Events"
 }
 ```
+
+
+Documentation
+-------------
+If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
 
 
 Community
