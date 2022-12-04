@@ -11,16 +11,6 @@ Requirements
 - Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module while adding the following variable: `enable_cloudtrail = true`
 
 
-Inputs
-------
-| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
-| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                            | `string` | Yes       | n/a     |
-| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_cloudwatch_role       | Lightlytic CloudWatch role arn          |                                                                              | `string` | Yes       | n/a     |
-
-
 Usage
 -----
 
@@ -33,6 +23,16 @@ module "lightlytics-collection" {
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
 }
 ```
+
+
+Inputs
+------
+| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
+| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
+| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                            | `string` | Yes       | n/a     |
+| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_cloudwatch_role       | Lightlytic CloudWatch role arn          |                                                                              | `string` | Yes       | n/a     |
 
 
 Run
