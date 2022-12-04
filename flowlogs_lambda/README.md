@@ -10,21 +10,6 @@ Requirements
 - Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module while adding the following variable: `enable_cloudtrail = true`
 
 
-Inputs
-------
-| Variable Name                     | Description                                         | Notes                                                                        | Type           | Required? | Default |
-| :-------------------------------- | :-------------------------------------------------  | :----------------------------------------------------------------------------|:---------------|:--------- |:--------|
-| environment                       | Your environment URL including https://             | e.g `https://org.lightlytics.com`                                            | `string`       | Yes       | n/a     |
-| create_cloud_trail                |                                                     |                                                                              | `bool`         | No        | `false` |
-| enable_flowlogs                   |                                                     |                                                                              | `bool`         | No        | `true`  |
-| enable_cloudtrail                 |                                                     |                                                                              | `bool`         | No        | `true`  |
-| lightlytics_flowlogs_role         | Lightlytics role arn                                |																				 | `string`       | Yes       | n/a     |
-| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs               |   																			 | `list(string)` | No        | n/a     |
-| create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to  |                                                                      	     | `bool`         | No        | `false` |
-| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to | Required if `create_new_flowlogs_bucket` set to false                        | `string`       | No        | n/a     |    
-| s3_force_destroy                  |                                                     |                                                                              | `bool`         | No        | `true`  |
-
-
 Usage
 -----
 
@@ -38,6 +23,21 @@ module "flow-logs-us-east-1" {
   flowlogs_bucket_name                         = "Your_Flow_Logs_S3_Bucket"
 }
 ```
+
+
+Inputs
+------
+| Variable Name                     | Description                                         | Notes                                                                        | Type           | Required? | Default |
+| :-------------------------------- | :-------------------------------------------------  | :----------------------------------------------------------------------------|:---------------|:--------- |:--------|
+| environment                       | Your environment URL including https://             | e.g `https://org.lightlytics.com`                                            | `string`       | Yes       | n/a     |
+| create_cloud_trail                |                                                     |                                                                              | `bool`         | No        | `false` |
+| enable_flowlogs                   |                                                     |                                                                              | `bool`         | No        | `true`  |
+| enable_cloudtrail                 |                                                     |                                                                              | `bool`         | No        | `true`  |
+| lightlytics_flowlogs_role         | Lightlytics role arn                                |																				 | `string`       | Yes       | n/a     |
+| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs               |   																			 | `list(string)` | No        | n/a     |
+| create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to  |                                                                      	     | `bool`         | No        | `false` |
+| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to | Required if `create_new_flowlogs_bucket` set to false                        | `string`       | No        | n/a     |    
+| s3_force_destroy                  |                                                     |                                                                              | `bool`         | No        | `true`  |
 
 
 Documentation
