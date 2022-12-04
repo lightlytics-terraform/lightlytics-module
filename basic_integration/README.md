@@ -8,18 +8,6 @@ Requirements
 - Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git)
 
 
-
-Inputs
-------
-| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
-| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                           | `string` | Yes       | n/a     |
-| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
-| Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_auth_token            | Lightlytics authentication token        |                                                                              | `string` | Yes       | n/a     |
-
-
 Usage
 -----
 ```hcl
@@ -32,6 +20,16 @@ module "lightlytics" {
   lightlytics_auth_token                       = "lightlytics_account.<Lightlytics_provider_resource>.account_auth_token"
 }
 ```
+
+Inputs
+------
+| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
+| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
+| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                           | `string` | Yes       | n/a     |
+| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
+| Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_auth_token            | Lightlytics authentication token        |                                                                              | `string` | Yes       | n/a     |
 
 
 Run
