@@ -23,11 +23,11 @@ module "lightlytics" {
     aws = aws.us-east-1
   }
   source = "github.com/lightlytics-terraform/lightlytics-module/basic_integration"
-  environment                                  = "<https://<env_name>.lightlytics.com>"
-  aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
-  Lightlytics_internal_accountID               = "lightlytics_account.<Lightlytics_provider_resource>.id"
-  lightlytics_account_externalID               = "lightlytics_account.<Lightlytics_provider_resource>.external_id"
-  lightlytics_auth_token                       = "lightlytics_account.<Lightlytics_provider_resource>.account_auth_token"
+  environment                    = "<https://<env_name>.lightlytics.com>"
+  aws_account_id                 = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
+  Lightlytics_internal_accountID = "lightlytics_account.<Lightlytics_provider_resource>.id"
+  lightlytics_account_externalID = "lightlytics_account.<Lightlytics_provider_resource>.external_id"
+  lightlytics_auth_token         = "lightlytics_account.<Lightlytics_provider_resource>.account_auth_token"
 }
 
 module "lightlytics-collection-us-east-1" {
@@ -35,10 +35,10 @@ module "lightlytics-collection-us-east-1" {
   providers = {
     aws = aws.us-east-1
   }
-  environment                                  = "<https://<env_name>.lightlytics.com>"
-  aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
-  lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
-  lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
+  environment                    = "<https://<env_name>.lightlytics.com>"
+  aws_account_id                 = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
+  lightlytics_collection_token   = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  lightlytics_cloudwatch_role    = module.lightlytics.lightlytics_cloudwatch_role
 }
 ```
 
