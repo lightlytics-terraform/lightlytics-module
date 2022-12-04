@@ -13,7 +13,7 @@ Usage
 ```hcl
 module "lightlytics" {
   source = "github.com/lightlytics-terraform/lightlytics-module/basic_integration"
-  environment                                  = "<https://<env_name>.lightlytics.com>"
+  environment                                  = "<Organization_Name_From_The_URL"
   aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   Lightlytics_internal_accountID               = "lightlytics_account.<Lightlytics_provider_resource>.id"
   lightlytics_account_externalID               = "lightlytics_account.<Lightlytics_provider_resource>.external_id"
