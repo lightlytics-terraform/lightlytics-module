@@ -36,8 +36,8 @@ Inputs
 | lightlytics_flowlogs_role         | Lightlytics role arn                                |																				 | `string`       | Yes       | n/a     |
 | vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs               |   																			 | `list(string)` | No        | n/a     |
 | create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to  |                                                                      	     | `bool`         | No        | `false` |
-| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to  | Required if `create_new_flowlogs_bucket` set to false                        | `string`       | No        | n/a     |    
-| s3_force_destroy   
+| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to  | Required if `create_new_flowlogs_bucket` is set to false                        | `string`       | No        | n/a     |    
+| s3_force_destroy                  | Deletes the created S3 bucket upon destroy          | Relevant if `create_new_flowlogs_bucket` is set to true                          | `bool`         | No        | `true`  |  
 
 
 Documentation
