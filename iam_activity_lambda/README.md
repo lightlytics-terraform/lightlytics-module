@@ -16,10 +16,10 @@ Usage
 ```hcl
 module "iam-activity-logs-us-east-1" {
   source = "github.com/lightlytics-terraform/lightlytics-module/iam_activity_lambda"
-  environment                                  = "<https://<env_name>.lightlytics.com>"
+  environment                                  = "<Organization_Name_From_The_URL>"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_iam_activity_role                = module.lightlytics-module.lightlytics_iam_activity_role
-  iam_activity_bucket_name                     = "Your_S3_Bucket_Name_Storing_CloudTrail_Events"
+  iam_activity_bucket_name                     = "<Your_S3_Bucket_Name_Storing_CloudTrail_Events>"
 }
 ```
 
