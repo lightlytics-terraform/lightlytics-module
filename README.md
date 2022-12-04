@@ -47,7 +47,7 @@ Inputs
 ------
 | Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
 | :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https:// | e.g `https://org.lightlytics.com`                                           | `string` | Yes       | n/a     |
+| environment                       | Your organization name from the URL     | Only the name, e.g mike from `https://mike.lightlytics.com`                  | `string` | Yes       | n/a     || `string` | Yes       | n/a     |
 | aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
 | Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
 | lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
