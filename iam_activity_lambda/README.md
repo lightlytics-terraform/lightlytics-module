@@ -10,16 +10,6 @@ Requirements
 - Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module while adding the following variable: `enable_cloudtrail = true`
 
 
-Inputs
-------
-| Variable Name                     | Description                                  | Notes                                                                        | Type     | Required? | Default |
-| :-------------------------------- | :------------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your environment URL including https://      | e.g `https://org.lightlytics.com`                                            | `string` | Yes       | n/a     |
-| lightlytics_collection_token      | Lightlytics collection token                 |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_iam_activity_role     | Lightlytics IAM Activity role arn            |                                                                              | `string` | Yes       | n/a     |
-| iam_activity_bucket_name          | Your S3 bucket name that stores CloudTrail events |                                                                              | `string` | Yes       | n/a     |
-
-
 Usage
 -----
 
@@ -32,6 +22,16 @@ module "iam-activity-logs-us-east-1" {
   iam_activity_bucket_name                     = "Your_S3_Bucket_Name_Storing_CloudTrail_Events"
 }
 ```
+
+
+Inputs
+------
+| Variable Name                     | Description                                  | Notes                                                                        | Type     | Required? | Default |
+| :-------------------------------- | :------------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
+| environment                       | Your environment URL including https://      | e.g `https://org.lightlytics.com`                                            | `string` | Yes       | n/a     |
+| lightlytics_collection_token      | Lightlytics collection token                 |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_iam_activity_role     | Lightlytics IAM Activity role arn            |                                                                              | `string` | Yes       | n/a     |
+| iam_activity_bucket_name          | Your S3 bucket name that stores CloudTrail events |                                                                              | `string` | Yes       | n/a     |
 
 
 Documentation
