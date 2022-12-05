@@ -12,7 +12,7 @@ Prerequisites
 
 Requirements
 ------------
-- Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
+- Must be used with Lightlytics Terraform [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
 
 
 Usage
@@ -23,7 +23,7 @@ module "lightlytics" {
     aws = aws.us-east-1
   }
   source = "github.com/lightlytics-terraform/lightlytics-module/basic_integration"
-  environment                    = "<Organization_Name_From_The_URL>" 
+  environment                    = "<Your_Organization_Name_From_The_URL>" 
   aws_account_id                 = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   Lightlytics_internal_accountID = "lightlytics_account.<Lightlytics_provider_resource>.id"
   lightlytics_account_externalID = "lightlytics_account.<Lightlytics_provider_resource>.external_id"
@@ -35,7 +35,7 @@ module "lightlytics-collection-us-east-1" {
   providers = {
     aws = aws.us-east-1
   }
-  environment                    = "<Organization_Name_From_The_URL>"
+  environment                    = "<Your_Organization_Name_From_The_URL>"
   aws_account_id                 = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   lightlytics_collection_token   = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_cloudwatch_role    = module.lightlytics.lightlytics_cloudwatch_role
@@ -69,31 +69,32 @@ On destroy:
 - Delete all above resources including disconnecting the AWS account from Lightlytics platform
 
 
-## Feature notes
+Lightlytics Featured Products
+================================
+
+Connect AWS Account to Lightlytics Terraform Module (basic_integration)
+-----------------------------------------------------------------------
+- This module connects your AWS account to [Lightlytics](https://www.lightlytics.com/) and triggers your account initial scan.
 
 
-basic_integration
------
-
-- Create cloud watch
-
-
-collection_lambda
------
-
-- Create collection lambda
+Lightlytics Real-Time Events Collection Terraform Module (collection_lambda)
+----------------------------------------------------------------------------
+- This module enables Lightlytics to receive real-time events of your AWS account based on AWS CloudWatch. Integrating with this module will help you track cloud configuration changes with a complete context of who, what, where, and when while providing impact analysis of your cloud environment in real time.
 
 
-flowlogs_lambda
------
+Lightlytics Network Traffic Activity (Flow Logs) Terraform Module (flowlogs_lambda)
+-----------------------------------------------------------------------------------
+- This module is in charge of creating VPC flow logs with a custom format and sending it over to Lightlytics. Integrating with this module will help you analyze and troubleshoot network traffic activity and quickly identify issues in your cloud environments using enriched and detailed logs across VPCs, services, clusters, workloads, network components, and much more.
 
-- Create flowlogs lambda
 
-cloudwatch_templates
------
+Lightlytics Identity Activity (IAM Logs) Terraform Module (iam_activity_lambda)
+-------------------------------------------------------------------------------
+- This module creates and collects CloudTrail logs to provide visibility of how identities are being assumed and used across your AWS environment. Integrating with this module will help you monitor and analyze any identity (Identity Access Management - IAM) activity in your account with automatic correlation to your cloud resources.
 
-- Cloudwatch rules templates.
 
+Lightlytics Cost
+----------------
+- Coming soon...
 
 
 ## Providers
