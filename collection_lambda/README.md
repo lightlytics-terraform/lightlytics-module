@@ -17,7 +17,7 @@ Usage
 ```hcl
 module "lightlytics-collection" {
   source = "github.com/lightlytics-terraform/lightlytics-module/collection_lambda"
-  environment                                  = "<Organization_Name_From_The_URL"
+  environment                                  = "<Your_Organization_Name_From_The_URL"
   aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
