@@ -52,7 +52,7 @@ Inputs
 | Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
 | lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
 | lightlytics_auth_token            | Lightlytics authentocation token        |                                                                              | `string` | Yes       | n/a     |
-
+| environment                       | Your organization name from the URL     | Only the name, e.g mike from `https://mike.lightlytics.com`                  | `string` | Yes       | n/a     |
 
 Run
 ---
@@ -72,22 +72,22 @@ On destroy:
 Lightlytics Featured Products
 ================================
 
-Connect AWS Account to Lightlytics Terraform Module (basic_integration)
+[Connect AWS Account to Lightlytics Terraform Module (basic_integration)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration#lightlytics-terraform-module---basic-integration)
 -----------------------------------------------------------------------
 - This module connects your AWS account to [Lightlytics](https://www.lightlytics.com/) and triggers your account initial scan.
 
 
-Lightlytics Real-Time Events Collection Terraform Module (collection_lambda)
+[Lightlytics Real-Time Events Collection Terraform Module (collection_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/collection_lambda#lightlytics-real-time-events-collection-terraform-module)
 ----------------------------------------------------------------------------
 - This module enables Lightlytics to receive real-time events of your AWS account based on AWS CloudWatch. Integrating with this module will help you track cloud configuration changes with a complete context of who, what, where, and when while providing impact analysis of your cloud environment in real time.
 
 
-Lightlytics Network Traffic Activity (Flow Logs) Terraform Module (flowlogs_lambda)
+[Lightlytics Network Traffic Activity (Flow Logs) Terraform Module (flowlogs_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/flowlogs_lambda#lightlytics-network-traffic-activity-flow-logs-terraform-module)
 -----------------------------------------------------------------------------------
 - This module is in charge of creating VPC flow logs with a custom format and sending it over to Lightlytics. Integrating with this module will help you analyze and troubleshoot network traffic activity and quickly identify issues in your cloud environments using enriched and detailed logs across VPCs, services, clusters, workloads, network components, and much more.
 
 
-Lightlytics Identity Activity (IAM Logs) Terraform Module (iam_activity_lambda)
+[Lightlytics Identity Activity (IAM Logs) Terraform Module (iam_activity_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/iam_activity_lambda#lightlytics-identity-activity-iam-logs-terraform-module)
 -------------------------------------------------------------------------------
 - This module creates and collects CloudTrail logs to provide visibility of how identities are being assumed and used across your AWS environment. Integrating with this module will help you monitor and analyze any identity (Identity Access Management - IAM) activity in your account with automatic correlation to your cloud resources.
 
