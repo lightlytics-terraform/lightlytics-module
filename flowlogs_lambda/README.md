@@ -20,24 +20,22 @@ module "flow-logs-us-east-1" {
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   vpc_flowlogs_ids                             = ["vpc-1234","vpc-5678"]
   lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
-  flowlogs_bucket_name                         = "<Your_Flow_Logs_S3_Bucket>"
+  flowlogs_bucket_name                         = "<Your_Existing_Flow_Logs_S3_Bucket>"
 }
 ```
 
 
 Inputs
 ------
-| Variable Name                     | Description                                         | Notes                                                                        | Type           | Required? | Default |
-| :-------------------------------- | :-------------------------------------------------  | :----------------------------------------------------------------------------|:---------------|:--------- |:--------|
-| environment                       | Your organization name from the URL     | Only the name, e.g mike from `https://mike.lightlytics.com`                  | `string` | Yes       | n/a     |             | `string`       | Yes       | n/a     |
-| enable_cloudtrail                 |                                                     |                                                                              | `bool`         | No        | `true`  |
-| create_cloud_trail                |                                                     |                                                                              | `bool`         | No        | `false` |
-| enable_flowlogs                   |                                                     |                                                                              | `bool`         | No        | `true`  |
-| lightlytics_flowlogs_role         | Lightlytics role arn                                |																				 | `string`       | Yes       | n/a     |
-| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs               |   																			 | `list(string)` | No        | n/a     |
-| create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to  |                                                                      	     | `bool`         | No        | `false` |
-| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to  | Required if `create_new_flowlogs_bucket` is set to false                        | `string`       | No        | n/a     |    
-| s3_force_destroy                  | Deletes the created S3 bucket upon destroy          | Relevant if `create_new_flowlogs_bucket` is set to true                          | `bool`         | No        | `true`  |  
+| Variable Name                     | Description                                                                | Notes                                                       | Type           | Required? | Default |
+|:----------------------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------|:---------------|:----------|:--------|
+| environment                       | Your organization name from the URL                                        | Only the name, e.g mike from `https://mike.lightlytics.com` | `string`       | Yes       | n/a     |
+| lightlytics_collection_token      | Lightlytics collection token          									 | Taken from Lightlytics provide module                       | `string`       | Yes       | n/a     |
+| lightlytics_flowlogs_role         | Lightlytics role arn                                                       |															   | `string`       | Yes       | n/a     |
+| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs                                      |   														   | `list(string)` | No        | n/a     |
+| create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to                         |                                                             | `bool`         | No        | `false` |
+| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to                         | Required if `create_new_flowlogs_bucket` set to false       | `string`       | No        | n/a     |    
+| s3_force_destroy                  | Deletes the created S3 bucket upon destroy                                 | Relevant if `create_new_flowlogs_bucket` set to true        | `bool`         | No        | `true`  |
 
 
 Documentation
