@@ -7,7 +7,9 @@ Integrating with this module will help you monitor and analyze any identity (Ide
 Requirements
 ------------
 - Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
-- Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module while adding the following variable: `enable_cloudtrail = true`
+- Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module
+- An AWS account configured with [management events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html) trail on CloudTrail.
+- The S3 bucket name storing the logs of the trail.
 
 
 Usage
