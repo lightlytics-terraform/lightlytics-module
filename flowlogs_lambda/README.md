@@ -30,7 +30,7 @@ Inputs
 | Variable Name                     | Description                                                                | Notes                                                       | Type           | Required? | Default |
 |:----------------------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------|:---------------|:----------|:--------|
 | environment                       | Your organization name from the URL                                        | Only the name, e.g mike from `https://mike.lightlytics.com` | `string`       | Yes       | n/a     |
-| lightlytics_collection_token      | Lightlytics collection token          									 | Taken from Lightlytics provide module                       | `string`       | Yes       | n/a     |
+| lightlytics_collection_token      | Lightlytics collection token          									 | Taken from Lightlytics provider module                       | `string`       | Yes       | n/a     |
 | lightlytics_flowlogs_role         | Lightlytics role arn                                                       |															   | `string`       | Yes       | n/a     |
 | vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs                                      |   														   | `list(string)` | No        | n/a     |
 | create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to                         |                                                             | `bool`         | No        | `false` |
