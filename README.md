@@ -42,6 +42,13 @@ module "lightlytics-collection-us-east-1" {
 }
 ```
 
+Examples
+--------
+- [Single Region Basic Integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/examples/single%20region%20basic%20integration)
+- [Single Region with Network Traffic Activity (VPC Flow Logs)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/examples/single%20region%20with%20identity%20activity%20(iam%20logs))
+- [Single Region with Identity Activity (IAM Logs)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/examples/single%20region%20with%20identity%20activity%20(iam%20logs))
+- [Multi Region Basic Integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/examples/multi%20region%20basic%20integration)
+
 
 Inputs
 ------
