@@ -18,6 +18,33 @@ Requirements
 Usage
 -----
 ```hcl
+# Configure Lightlytics Terraform Provider host and credentials
+terraform {
+  required_providers {
+    lightlytics  = {
+      version    = "0.2"
+      source     = "lightlytics.com/api/lightlytics"
+    }
+  }
+}
+
+provider "lightlytics" {
+  host           = "<https://<env_name>.lightlytics.com>"
+  username       = "<Your_Lightlytics_Login_Email>"
+  password       = "<Your_Lightlytics_Login_Password>"
+  workspace_id   = "<Your_Lightlytics_Workspace_ID>"  ## Can be obtained from Lightlytics platform, if not specified, it will use the first WS
+}
+
+# Configure AWS Account
+resource "lightlytics_account" "aws" {
+  account_type   = "AWS"
+  aws_account_id = "<Your_AWS_Account_ID>"
+  display_name   = "<Your_Desired_Lightlytics_Integration_Display_Name>"
+  stack_region   = "us-east-1"
+  aws_regions    = ["us-east-1", "us-east-2"]
+}
+
+# Connect AWS account to Lightlytics (Basic Integration)
 module "lightlytics" {
   providers = {
     aws = aws.us-east-1
@@ -30,6 +57,7 @@ module "lightlytics" {
   lightlytics_auth_token         = "lightlytics_account.<Lightlytics_provider_resource>.account_auth_token"
 }
 
+# Enable Real-time Events
 module "lightlytics-collection-us-east-1" {
   source = "github.com/lightlytics-terraform/lightlytics-module/collection_lambda"
   providers = {
@@ -40,6 +68,26 @@ module "lightlytics-collection-us-east-1" {
   lightlytics_collection_token   = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_cloudwatch_role    = module.lightlytics.lightlytics_cloudwatch_role
 }
+
+# Enable Network Traffic Activity (VPC Flow Logs)
+module "flow-logs-us-east-1" {
+  source = "github.com/lightlytics-terraform/lightlytics-module/flowlogs_lambda"
+  environment                                  = "<Your_Organization_Name_From_The_URL>"
+  lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  vpc_flowlogs_ids                             = ["vpc-1234","vpc-5678"]
+  lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
+  flowlogs_bucket_name                         = "<Your_Existing_Flow_Logs_S3_Bucket>"
+}
+
+# Enable Identity Activity (IAM Logs)
+module "iam-activity-logs-us-east-1" {
+  source = "github.com/lightlytics-terraform/lightlytics-module/iam_activity_lambda"
+  environment                                  = "<Your_Organization_Name_From_The_URL>"
+  lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  lightlytics_iam_activity_role                = module.lightlytics-module.lightlytics_iam_activity_role
+  iam_activity_bucket_name                     = "<Your_S3_Bucket_Name_Storing_CloudTrail_Events>"
+}
+
 ```
 
 Examples
@@ -52,28 +100,33 @@ Examples
 
 Inputs
 ------
-| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
-| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your organization name from the URL     | Only the name, e.g mike from `https://mike.lightlytics.com`                  | `string` | Yes       | n/a     || `string` | Yes       | n/a     |
-| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
-| Lightlytics_internal_accountID    | Lightlytics internal account ID         |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_account_externalID    | Lightlytics external account ID         |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_auth_token            | Lightlytics authentocation token        |                                                                              | `string` | Yes       | n/a     |
-
-
-Run
----
-This Terraform module will do the following:
-
-On apply:
-- Create AWS IAM Policy
-- Create AWS IAM Role
-- Create AWS Lambda Function
-- Create AWS IAM Role for Lambda Function
-- Trigger Lambda Function
-
-On destroy:
-- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+| Variable Name                     | Description                                                                | Notes                                               		   | Type           | Required? | Default |
+|:----------------------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------|:---------------|:--------- |:--------|
+| host                              | Your environment URL including https://                                    | e.g `https://org.lightlytics.com`                   		   | `string`       | Yes       | n/a     |
+| username                          | Your Lightlytics user Email                                                |                                                     		   | `string`       | Yes       | n/a     |
+| password                          | Your Lightlytics user password                                             |                                                     		   | `string`       | Yes       | n/a     |
+| workspace_id                      | Can be obtained from Lightlytics platform                                  | Will use default workspace in case not specified   		   | `string`       | No        | n/a     |
+| aws_account_id                    | Your AWS account ID                                                        |                       			                 		   | `string`       | Yes       | n/a     |
+| display_name                      | Your integration display name within Lightlytics platform                  |                                                  		   | `string`       | Yes       | n/a     |
+| stack_region                      | The primary region where Lightlytics read access resources will be created |                                                   		   | `string`       | Yes       | n/a     |
+| aws_regions                       | List of desired regions to be scanned                                      | us-east-1 region is mandatory for the integration  		   | `list(string)` | Yes       | n/a     | 
+| environment                       | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.lightlytics.com` | `string`       | Yes       | n/a     |
+| Lightlytics_internal_accountID    | Lightlytics internal account ID       								     |                                                             | `string`       | Yes       | n/a     |
+| lightlytics_account_externalID    | Lightlytics external account ID        									 |                                                             | `string`       | Yes       | n/a     |
+| lightlytics_auth_token            | Lightlytics authentocation token        									 |                                                             | `string`       | Yes       | n/a     | 
+| enable_cloudtrail                 | Enables Lightlytics real-time events                                       |															   | `bool`         | No        | `true`  |
+| create_cloud_trail                | Creates a CloudTrail to capture all compatible management events           |                                                             | `bool`         | No        | `false` |
+| enable_flowlogs                   | Enables Lightlytics network traffic activity (VPC flow logs)               |															   | `bool`         | No        | `true`  |
+| enable_iam_activity               | Enables Lightlytics identity activity (IAM logs)							 |															   | `bool`         | No        | `true`  |
+| s3_force_destroy                  | Deletes the created S3 bucket upon destroy     						     |															   | `bool`         | No        | `true`  |
+| lightlytics_collection_token      | Lightlytics collection token          								     |                                                             | `int`          | Yes       | n/a     |
+| lightlytics_cloudwatch_role       | Lightlytic CloudWatch role arn         									 |                                                             | `string`       | Yes       | n/a     |
+| lightlytics_flowlogs_role         | Lightlytics role arn                                                       |															   | `string`       | Yes       | n/a     |
+| vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs                                      |   														   | `list(string)` | No        | n/a     |
+| create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to                         |                                                             | `bool`         | No        | `false` |
+| flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to                         | Required if `create_new_flowlogs_bucket` set to false       | `string`       | No        | n/a     | 
+| lightlytics_iam_activity_role     | Lightlytics IAM Activity role arn            								 |                                                             | `string`       | Yes       | n/a     |
+| iam_activity_bucket_name          | Your S3 bucket name storing CloudTrail events 							 |                                                             | `string`       | Yes       | n/a     |
 
 
 Lightlytics Featured Products
