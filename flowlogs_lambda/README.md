@@ -38,6 +38,23 @@ Inputs
 | s3_force_destroy                  | Deletes the created S3 bucket upon destroy                                 | Relevant if `create_new_flowlogs_bucket` set to true        | `bool`         | No        | `true`  |
 
 
+Run
+---
+This Terraform module will do the following:
+
+On apply:
+- Create VPC flow logs to the desired VPC's
+- Create S3 bucket to publish VPC flow logs in case not provided
+- Create IAM policy
+- Create IAM role
+- Create Lambda function
+- Create IAM role for Lambda function
+- Create trigger in the Lambda function
+
+On destroy:
+- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+
+
 Documentation
 -------------
 If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
