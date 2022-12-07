@@ -36,6 +36,21 @@ Inputs
 | iam_activity_bucket_name          | Your S3 bucket name that stores CloudTrail events |                                                                              | `string` | Yes       | n/a     |
 
 
+Run
+---
+This Terraform module will do the following:
+
+On apply:
+- Create IAM policy
+- Create IAM role
+- Create Lambda function
+- Create IAM role for Lambda function
+- Create trigger in the Lambda function
+
+On destroy:
+- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+
+
 Documentation
 -------------
 If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
