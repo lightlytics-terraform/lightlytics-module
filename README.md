@@ -21,18 +21,18 @@ Usage
 # Configure Lightlytics Terraform Provider host and credentials
 terraform {
   required_providers {
-    lightlytics  = {
-      version    = "0.2"
-      source     = "lightlytics.com/api/lightlytics"
+    lightlytics = {
+      version   = "0.2"
+      source    = "lightlytics.com/api/lightlytics"
     }
   }
 }
 
 provider "lightlytics" {
-  host           = "<https://<env_name>.lightlytics.com>"
-  username       = "<Your_Lightlytics_Login_Email>"
-  password       = "<Your_Lightlytics_Login_Password>"
-  workspace_id   = "<Your_Lightlytics_Workspace_ID>"  ## Can be obtained from Lightlytics platform, if not specified, it will use the first WS
+  host         = "<https://<env_name>.lightlytics.com>"
+  username     = "<Your_Lightlytics_Login_Email>"
+  password     = "<Your_Lightlytics_Login_Password>"
+  workspace_id = "<Your_Lightlytics_Workspace_ID>"  ## Can be obtained from Lightlytics platform, if not specified, it will use the first WS
 }
 
 # Configure AWS Account
@@ -63,29 +63,29 @@ module "lightlytics-collection-us-east-1" {
   providers = {
     aws = aws.us-east-1
   }
-  environment                    = "<Your_Organization_Name_From_The_URL>"
-  aws_account_id                 = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
-  lightlytics_collection_token   = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
-  lightlytics_cloudwatch_role    = module.lightlytics.lightlytics_cloudwatch_role
+  environment                  = "<Your_Organization_Name_From_The_URL>"
+  aws_account_id               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
+  lightlytics_collection_token = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  lightlytics_cloudwatch_role  = module.lightlytics.lightlytics_cloudwatch_role
 }
 
 # Enable Network Traffic Activity (VPC Flow Logs)
 module "flow-logs-us-east-1" {
   source = "github.com/lightlytics-terraform/lightlytics-module/flowlogs_lambda"
-  environment                                  = "<Your_Organization_Name_From_The_URL>"
-  lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
-  vpc_flowlogs_ids                             = ["vpc-1234","vpc-5678"]
-  lightlytics_flowlogs_role                    = module.lightlytics-module.lightlytics_flowlogs_role
-  flowlogs_bucket_name                         = "<Your_Existing_Flow_Logs_S3_Bucket>"
+  environment                  = "<Your_Organization_Name_From_The_URL>"
+  lightlytics_collection_token = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  vpc_flowlogs_ids             = ["vpc-1234","vpc-5678"]
+  lightlytics_flowlogs_role    = module.lightlytics-module.lightlytics_flowlogs_role
+  flowlogs_bucket_name         = "<Your_Existing_Flow_Logs_S3_Bucket>"
 }
 
 # Enable Identity Activity (IAM Logs)
 module "iam-activity-logs-us-east-1" {
   source = "github.com/lightlytics-terraform/lightlytics-module/iam_activity_lambda"
-  environment                                  = "<Your_Organization_Name_From_The_URL>"
-  lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
-  lightlytics_iam_activity_role                = module.lightlytics-module.lightlytics_iam_activity_role
-  iam_activity_bucket_name                     = "<Your_S3_Bucket_Name_Storing_CloudTrail_Events>"
+  environment                   = "<Your_Organization_Name_From_The_URL>"
+  lightlytics_collection_token  = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
+  lightlytics_iam_activity_role = module.lightlytics-module.lightlytics_iam_activity_role
+  iam_activity_bucket_name      = "<Your_S3_Bucket_Name_Storing_CloudTrail_Events>"
 }
 
 ```
@@ -130,7 +130,7 @@ Inputs
 
 
 Lightlytics Featured Products
-================================
+=============================
 
 [Connect AWS Account to Lightlytics Terraform Module (basic_integration)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration#lightlytics-terraform-module---basic-integration)
 -----------------------------------------------------------------------
