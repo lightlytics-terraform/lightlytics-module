@@ -107,7 +107,7 @@ Inputs
 | password                          | Your Lightlytics user password                                             |                                                     		   | `string`       | Yes       | n/a     |
 | workspace_id                      | Can be obtained from Lightlytics platform                                  | Will use default workspace in case not specified   		   | `string`       | No        | n/a     |
 | aws_account_id                    | Your AWS account ID                                                        |                       			                 		   | `string`       | Yes       | n/a     |
-| display_name                      | Your integration display name within Lightlytics platform                  |                                                  		   | `string`       | Yes       | n/a     |
+| display_name                      | Your integration display name within Lightlytics platform                  |                                                  		   | `string`       | No       | n/a     |
 | stack_region                      | The primary region where Lightlytics read access resources will be created |                                                   		   | `string`       | Yes       | n/a     |
 | aws_regions                       | List of desired regions to be scanned                                      | us-east-1 region is mandatory for the integration  		   | `list(string)` | Yes       | n/a     | 
 | environment                       | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.lightlytics.com` | `string`       | Yes       | n/a     |
