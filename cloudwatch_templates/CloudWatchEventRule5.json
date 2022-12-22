@@ -1,6 +1,6 @@
 {
  "source": ["aws.apigateway", "aws.autoscaling", "aws.dynamodb", "aws.ec2", "aws.ecs", "aws.eks", "aws.elasticache", "aws.elasticloadbalancing", "aws.elasticmapreduce", "aws.es", "aws.glacier", "aws.iam", "aws.kafka", "aws.kinesis", "aws.kms", "aws.lambda", "aws.rds", "aws.route53", "aws.s3", "aws.sagemaker", "aws.sns", "aws.sqs", "aws.wafv2"],
   "detail": {
-     "eventName": ["UpdateFunctionConfiguration20150331v2", "UpdateHostedZoneComment", "UpdateIntegration", "UpdateNodegroupConfig", "UpdateRoute", "UpdateRuleGroup", "UpdateService", "UpdateStage", "UpdateTable", "UpdateWebACL"]
+     "eventName": ["UpdateDeployment", "UpdateDistribution", "UpdateDomain", "UpdateElasticsearchDomainConfig", "UpdateFunctionConfiguration20150331v2", "UpdateHostedZoneComment", "UpdateIntegration", "UpdateNodegroupConfig", "UpdateRoute", "UpdateRuleGroup", "UpdateService", "UpdateStage", "UpdateTable", "UpdateTrail", "UpdateWebACL"]
   }
 }
