@@ -51,11 +51,11 @@ resource "aws_iam_policy" "lightlytics-policy2" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-global" {
+resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-global1" {
   role = aws_iam_role.lightlytics-role.name
   policy_arn = aws_iam_policy.lightlytics-policy1.arn
 }
-resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-global" {
+resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-global2" {
   role = aws_iam_role.lightlytics-role.name
   policy_arn = aws_iam_policy.lightlytics-policy2.arn
 }
