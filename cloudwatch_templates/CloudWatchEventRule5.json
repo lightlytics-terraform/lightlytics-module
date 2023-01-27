@@ -1,6 +1,6 @@
 {
  "source": ["aws.apigateway", "aws.athena", "aws.autoscaling", "aws.directconnect", "aws.dms", "aws.dynamodb", "aws.ec2", "aws.ecs", "aws.eks", "aws.elasticache", "aws.elasticloadbalancing", "aws.elasticmapreduce", "aws.es", "aws.glacier", "aws.glue", "aws.iam", "aws.kafka", "aws.kinesis", "aws.kms", "aws.lambda", "aws.rds", "aws.route53", "aws.s3", "aws.sagemaker", "aws.sns", "aws.sqs", "aws.wafv2"],
   "detail": {
-     "eventName": ["UpdateBrokerCount", "UpdateBrokerStorage", "UpdateBrokerType", "UpdateClusterConfig", "UpdateClusterKafkaVersion", "UpdateDeployment", "UpdateDistribution", "UpdateDomain", "UpdateElasticsearchDomainConfig", "UpdateFunctionConfiguration20150331v2", "UpdateHostedZoneComment", "UpdateIntegration", "UpdateNodegroupConfig", "UpdateRoute", "UpdateRuleGroup", "UpdateService", "UpdateStage", "UpdateTable", "UpdateTrail", "UpdateWebACL"]
+     "eventName": ["UpdateAccountPasswordPolicy", "UpdateApi", "UpdateAssumeRolePolicy", "UpdateAutoScalingGroup", "UpdateBrokerCount", "UpdateBrokerStorage", "UpdateBrokerType", "UpdateClusterConfig", "UpdateClusterKafkaVersion", "UpdateDeployment", "UpdateDistribution", "UpdateDomain", "UpdateElasticsearchDomainConfig", "UpdateFunctionConfiguration20150331v2", "UpdateHostedZoneComment", "UpdateIntegration", "UpdateNodegroupConfig", "UpdateRoute", "UpdateRuleGroup", "UpdateService", "UpdateStage", "UpdateTable", "UpdateTrail", "UpdateWebACL"]
   }
 }
