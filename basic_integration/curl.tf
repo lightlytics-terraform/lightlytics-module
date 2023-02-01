@@ -1,5 +1,5 @@
 resource "null_resource" "lightlytics-enable-account" {
-  depends_on = [aws_iam_role_policy_attachment.lightlytics-role-attach-global, aws_iam_role.lightlytics-role, time_sleep.wait_15_seconds]
+  depends_on = [aws_iam_role_policy_attachment.lightlytics-role-attach-global1, aws_iam_role_policy_attachment.lightlytics-role-attach-global2, aws_iam_role.lightlytics-role, time_sleep.wait_15_seconds]
   provisioner "local-exec" {
     command    = <<EOF
         curl -X POST '${local.lightlytics_api_url}/graphql' \
@@ -11,6 +11,6 @@ EOF
 }
 
 resource "time_sleep" "wait_15_seconds" {
-  depends_on = [aws_iam_role_policy_attachment.lightlytics-role-attach-global, aws_iam_role.lightlytics-role]
+  depends_on = [aws_iam_role_policy_attachment.lightlytics-role-attach-global1, aws_iam_role_policy_attachment.lightlytics-role-attach-global2, aws_iam_role.lightlytics-role]
   create_duration = "15s"
 }
