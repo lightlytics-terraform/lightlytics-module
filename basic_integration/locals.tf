@@ -21,3 +21,6 @@ locals {
 locals {
   pvl_vpc = var.create_pvl_vpc == true ? aws_vpc.lightlytics-vpc-pvl[0].id : var.pvl_vpc_id
 }
+locals {
+  collection_token_secret_name = "lightlytics-collection-token"
+}
