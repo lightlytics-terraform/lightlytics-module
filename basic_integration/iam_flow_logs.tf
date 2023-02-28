@@ -83,5 +83,5 @@ resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-flow-logs" {
 resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-flow-logs-secret-policy" {
   count = var.enable_flowlogs == true ? 1 : 0
   role       = aws_iam_role.lightlytics-FlowLogs-lambda-role[0].name
-  policy_arn = aws_iam_policy.lightlytics_secret_lambda_policy[0].arn
+  policy_arn = aws_iam_policy.lightlytics_flowlogs_secret_lambda_policy[0].arn
 }
