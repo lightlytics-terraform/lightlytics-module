@@ -17,7 +17,7 @@ resource "aws_iam_role" "lightlytics-FlowLogs-lambda-role" {
 
 resource "aws_iam_policy" "lightlytics_flowlogs_secret_lambda_policy" {
   count = var.enable_flowlogs == true ? 1 : 0
-  name   = "${var.environment}-lightlytics-secret-policy"
+  name   = "${var.environment}-lightlytics-flowlogs-secret-policy"
   policy = jsonencode({
     "Version" : "2012-10-17"
     "Statement" : [
