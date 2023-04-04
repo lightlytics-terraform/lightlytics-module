@@ -13,6 +13,7 @@ resource "aws_vpc_endpoint" "secretmanager_endpoint" {
   vpc_id = local.pvl_vpc
   auto_accept = true
   service_name = "com.amazonaws.${data.aws_region.current.name}.secretsmanager"
+  vpc_endpoint_type = "Interface"
 }
 
 resource "aws_vpc_endpoint" "s3_endpoint" {
