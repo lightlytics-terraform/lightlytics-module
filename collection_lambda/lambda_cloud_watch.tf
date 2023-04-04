@@ -15,7 +15,7 @@ resource "aws_lambda_function" "lightlytics-CloudWatch-lambda" {
   }
   environment {
     variables = {
-      SECRET_NAME = local.collection_token_secret_name 
+      API_TOKEN = var.lightlytics_collection_token
       API_URL  = local.lightlytics_api_url_collection
       ENV      = var.type_env
       NODE_ENV = var.type_env
