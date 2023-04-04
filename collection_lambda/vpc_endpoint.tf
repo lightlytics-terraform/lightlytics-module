@@ -8,6 +8,14 @@ resource "aws_vpc_endpoint" "lightlytics_endpoint" {
   security_group_ids = local.pvl_security_groups
 }
 
+resource "aws_vpc_endpoint" "secretmanager_endpoint" {
+  count = var.create_pvl_endpoint == true ? 1 : 0
+  vpc_id = local.pvl_vpc
+  auto_accept = true
+  service_name = "com.amazonaws.${data.aws_region.current.name}.secretsmanager"
+  vpc_endpoint_type = "Interface"
+}
+
 resource "aws_vpc_endpoint" "s3_endpoint" {
   count = var.create_s3_endpoint == true ? 1 : 0
   vpc_id = local.pvl_vpc
