@@ -16,7 +16,7 @@ resource "aws_lambda_function" "lightlytics-FlowLogs-lambda" {
   environment {
     variables = {
       API_URL  = local.lightlytics_api_url_collection
-      API_TOKEN = var.lightlytics_collection_token
+      SECRET_NAME = local.collection_flowlogs_token_secret_name
       BATCH_SIZE = var.lambda_flow_logs_batch_size
       ENV      = var.type_env
       NODE_ENV = var.type_env
