@@ -74,8 +74,8 @@ resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-cloud-watch" 
   policy_arn = aws_iam_policy.lightlytics-CloudWatch-policy[0].arn
 }
 
-resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-flow-logs-secret-policy" {
-  count = var.enable_flowlogs == true ? 1 : 0
-  role       = aws_iam_role.lightlytics-FlowLogs-lambda-role[0].name
-  policy_arn = aws_iam_policy.lightlytics_flowlogs_secret_lambda_policy[0].arn
+resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-lambda" {
+  count = var.enable_cloudtrail == true ? 1 : 0
+  policy_arn = aws_iam_policy.lightlytics_lambda_policy[0].arn
+  role       = aws_iam_role.lightlytics-CloudWatch-role[0].name
 }
