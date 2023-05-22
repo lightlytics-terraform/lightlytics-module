@@ -1,7 +1,7 @@
 ###############------------Global-----------#############
 
 variable "environment" {}
-variable "aws_account_id" {}
+variable "cloud_account_id" {}
 variable "lightlytics_cloudwatch_role" {}
 variable "lightlytics_collection_token" {
   sensitive = true

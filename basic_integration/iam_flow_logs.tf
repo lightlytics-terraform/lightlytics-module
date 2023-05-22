@@ -33,7 +33,7 @@ resource "aws_iam_policy" "lightlytics_flowlogs_secret_lambda_policy" {
           "secretsmanager:GetSecretValue"
         ],
         Effect = "Allow",
-        Resource = "arn:aws:secretsmanager:*:${var.aws_account_id}:secret:${local.collection_flowlogs_token_secret_name}*"
+        Resource = "arn:aws:secretsmanager:*:${var.cloud_account_id}:secret:${local.collection_flowlogs_token_secret_name}*"
       }
     ]
 

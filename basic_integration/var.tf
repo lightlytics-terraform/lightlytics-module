@@ -1,7 +1,7 @@
 ###############------------Global-----------#############
 
 variable "environment" {}
-variable "aws_account_id" {}
+variable "cloud_account_id" {}
 variable "Lightlytics_internal_accountID" {
   sensitive = true
 }

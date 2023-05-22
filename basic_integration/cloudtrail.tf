@@ -38,7 +38,7 @@ resource "aws_s3_bucket_policy" "s3_cloudtrail_policy_attachment" {
               "Service": "cloudtrail.amazonaws.com"
             },
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::${aws_s3_bucket.lightlytics-cloudtrail-bucket[0].id}/prefix/AWSLogs/${var.aws_account_id}/*",
+            "Resource": "arn:aws:s3:::${aws_s3_bucket.lightlytics-cloudtrail-bucket[0].id}/prefix/AWSLogs/${var.cloud_account_id}/*",
             "Condition": {
                 "StringEquals": {
                     "s3:x-amz-acl": "bucket-owner-full-control"

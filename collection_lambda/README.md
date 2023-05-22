@@ -18,7 +18,7 @@ Usage
 module "lightlytics-collection" {
   source = "github.com/lightlytics-terraform/lightlytics-module/collection_lambda"
   environment                                  = "<Your_Organization_Name_From_The_URL"
-  aws_account_id                               = "lightlytics_account.<Lightlytics_provider_resource>.aws_account_id"
+  cloud_account_id                             = "lightlytics_account.<Lightlytics_provider_resource>.cloud_account_id"
   lightlytics_collection_token                 = "lightlytics_account.<Lightlytics_provider_resource>.lightlytics_collection_token"
   lightlytics_cloudwatch_role                  = module.lightlytics.lightlytics_cloudwatch_role
 }
@@ -27,12 +27,12 @@ module "lightlytics-collection" {
 
 Inputs
 ------
-| Variable Name                     | Description                             | Notes                                                                        | Type     | Required? | Default |
-| :-------------------------------- | :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
-| environment                       | Your organization name from the URL     | Only the name, e.g mike from `https://mike.lightlytics.com`                  | `string` | Yes       | n/a     || `string` | Yes       | n/a     |
-| aws_account_id                    | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_collection_token      | Lightlytics collection token            |                                                                              | `string` | Yes       | n/a     |
-| lightlytics_cloudwatch_role       | Lightlytic CloudWatch role arn          |                                                                              | `string` | Yes       | n/a     |
+| Variable Name                      | Description                             | Notes                                                                        | Type     | Required? | Default |
+|:-----------------------------------| :-------------------------------------  | :----------------------------------------------------------------------------|:---------|:--------- |:--------|
+| environment                        | Your organization name from the URL     | Only the name, e.g mike from `https://mike.lightlytics.com`                  | `string` | Yes       | n/a     || `string` | Yes       | n/a     |
+| cloud_account_id                   | Your AWS account ID                     |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_collection_token       | Lightlytics collection token            |                                                                              | `string` | Yes       | n/a     |
+| lightlytics_cloudwatch_role        | Lightlytic CloudWatch role arn          |                                                                              | `string` | Yes       | n/a     |
 
 
 Run

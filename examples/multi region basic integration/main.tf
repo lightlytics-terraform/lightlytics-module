@@ -29,18 +29,18 @@ provider "lightlytics" {
 }
 
 resource "lightlytics_account" "awsmike" {  ##awsmike can be changed. If changed, change in all respective vars
-  provider       = lightlytics.test-integration
-  account_type   = "AWS"
-  aws_account_id = ""             ## Your desired AWS account ID
-  display_name   = ""             ## Your integration display name within Lightlytics platform
-  aws_regions    = ["us-east-1"]  ## Desired regions to be scanned 
-  stack_region   = "us-east-1"    ## Main region to be deployed 
+  provider         = lightlytics.test-integration
+  account_type     = "AWS"
+  cloud_account_id = ""             ## Your desired AWS account ID
+  display_name     = ""             ## Your integration display name within Lightlytics platform
+  cloud_regions    = ["us-east-1"]  ## Desired regions to be scanned
+  stack_region     = "us-east-1"    ## Main region to be deployed
 }
 
 module "lightlytics" {
   source = "github.com/lightlytics-terraform/lightlytics-module/basic_integration"
   environment                    = ""  ## your organization name from the URL, only the name e.g mike from mike.lightlytics.com
-  aws_account_id                 = lightlytics_account.awsmike.aws_account_id
+  cloud_account_id               = lightlytics_account.awsmike.cloud_account_id
   Lightlytics_internal_accountID = lightlytics_account.awsmike.id
   lightlytics_account_externalID = lightlytics_account.awsmike.external_id
   lightlytics_auth_token         = lightlytics_account.awsmike.account_auth_token
@@ -49,7 +49,7 @@ module "lightlytics" {
 module "lightlytics-collection-us-east-1" {
   source                       = "github.com/lightlytics-terraform/lightlytics-module/collection_lambda"
   environment                  = ""  ## your organization name from the URL, only the name e.g mike from mike.lightlytics.com
-  aws_account_id               = lightlytics_account.awsmike.aws_account_id
+  cloud_account_id             = lightlytics_account.awsmike.cloud_account_id
   lightlytics_collection_token = lightlytics_account.awsmike.lightlytics_collection_token
   lightlytics_cloudwatch_role  = module.lightlytics.lightlytics_cloudwatch_role
 }
@@ -60,7 +60,7 @@ module "lightlytics-collection-us-west-2" {
     aws = aws.west  ## insert the alias the in format "aws.alias"
   }
   environment                  = ""  ## your organization name from the URL, only the name e.g mike from mike.lightlytics.com
-  aws_account_id               = lightlytics_account.awsmike.aws_account_id
+  cloud_account_id             = lightlytics_account.awsmike.cloud_account_id
   lightlytics_collection_token = lightlytics_account.awsmike.lightlytics_collection_token
   lightlytics_cloudwatch_role  = module.lightlytics.lightlytics_cloudwatch_role
 }
