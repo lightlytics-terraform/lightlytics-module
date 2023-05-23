@@ -26,7 +26,7 @@ Inputs
 | Variable Name                      | Description                             									 | Notes                                                       | Type     | Required? | Default |
 |:-----------------------------------| :------------------------------------------------------------------------- | :---------------------------------------------------------- |:---------|:--------- |:--------|
 | environment                        | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.lightlytics.com` | `string` | Yes       | n/a     |
-| cloud_account_id                   | Your AWS account ID                    									 |                                                             | `string` | Yes       | n/a     |
+| cloud_account_id                   | Your Cloud Provider account ID          									 |                                                             | `string` | Yes       | n/a     |
 | Lightlytics_internal_accountID     | Lightlytics internal account ID       								     |                                                             | `string` | Yes       | n/a     |
 | lightlytics_account_externalID     | Lightlytics external account ID        									 |                                                             | `string` | Yes       | n/a     |
 | lightlytics_auth_token             | Lightlytics authentocation token        									 |                                                             | `string` | Yes       | n/a     | 
