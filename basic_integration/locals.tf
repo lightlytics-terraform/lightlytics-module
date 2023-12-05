@@ -27,5 +27,5 @@ locals {
 }
 
 locals {
-  collection_flowlogs_token_secret_name = "lightlytics-collection-flowlogs-token"
+  collection_flowlogs_token_secret_name = "lightlytics-collection-token"
 }
