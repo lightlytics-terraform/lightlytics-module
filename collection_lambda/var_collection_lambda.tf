@@ -3,7 +3,7 @@ variable "collection-lambda" {
   default = {
     "stage-collection_lambda_layer" = "7defdd088df940d698d7a736fc3eb8d2"
     "stage-collection_lambda_cloudwatch" = "d3422a591b61069f6994aa3ee1e6e12d"
-    "prod-collection_lambda_layer" = "c6089f48aeb2a3bf17a77f936ea0b344"
-    "prod-collection_lambda_cloudwatch" = "250b54a2499d95450569d037be0d17eb"
+    "prod-collection_lambda_layer" = "0cbc3720df48462db9fbe4b8d60b934e"
+    "prod-collection_lambda_cloudwatch" = "d3422a591b61069f6994aa3ee1e6e12d"
   }
 }
