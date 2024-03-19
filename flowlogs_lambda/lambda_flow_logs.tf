@@ -3,7 +3,7 @@ resource "aws_lambda_function" "lightlytics-FlowLogs-lambda" {
   role          = var.lightlytics_flowlogs_role
 #  architectures = var.lambda_flow_logs_architectures   # requires aws provider 3.61
   handler       = "src/handler.s3Collector"
-  runtime       = "nodejs14.x"
+  runtime       = "nodejs18.x"
   memory_size   = var.lambda_flow_logs_memory_size
   timeout       = var.lambda_flow_logs_timeout
   s3_bucket     = local.lambda_source_code_bucket

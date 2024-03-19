@@ -3,7 +3,7 @@ resource "aws_lambda_function" "lightlytics-CloudWatch-lambda" {
   role          = var.lightlytics_cloudwatch_role
 #  architectures = var.lambda_cloud_watch_architectures   # requires aws provider 3.61
   handler       = "src/handler.cloudWatchCollector"
-  runtime       = "nodejs14.x"
+  runtime       = "nodejs18.x"
   memory_size   = var.lambda_cloud_watch_memory_size
   timeout       = var.lambda_cloud_watch_timeout
   s3_bucket     = local.lambda_source_code_bucket
