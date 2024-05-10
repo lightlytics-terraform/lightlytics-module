@@ -16,6 +16,7 @@ resource "aws_lambda_function" "lightlytics-IamActivity-lambda" {
   environment {
     variables = {
       API_TOKEN = var.lightlytics_collection_token
+      SECRET_NAME = var.lightlytics_collection_token
       API_URL  = local.lightlytics_api_url_collection
       BATCH_SIZE = var.lambda_iam_activity_batch_size
       ENV      = var.type_env

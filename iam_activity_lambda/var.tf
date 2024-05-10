@@ -11,7 +11,7 @@ data "aws_region" "current" {}
 ###############------------Environment-----------#############
 
 variable "domain_name" {
-  default = "lightlytics.com"
+  default = "streamsec.io"
 }
 variable "lightlytics_bucket" {
   default = "prod-lightlytics-artifacts"
