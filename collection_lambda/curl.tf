@@ -4,7 +4,7 @@ resource "null_resource" "lightlytics-enable-realtime" {
     command    = <<EOF
         curl -X POST '${local.lightlytics_api_url}/api/v1/collection/cloudtrail/cft-event' \
           -H 'X-Lightlytics-Token: ${var.lightlytics_collection_token}' \
-          -d '{"operation": "Create","Region": "${data.aws_region.current.name}","AccountId": "${var.cloud_account_id}","TemplateVersion": ${var.collection_stack_version}}'
+          -d '{"operation": "Create","Region": "${data.aws_region.current.name}","AccountId": "${var.cloud_account_id}","TemplateVersion": ״${var.collection_stack_version}״}'
 EOF
   }
 }
