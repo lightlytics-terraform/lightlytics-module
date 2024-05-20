@@ -3,7 +3,7 @@ resource "aws_lambda_function" "lightlytics-IamActivity-lambda" {
   role          = var.lightlytics_iam_activity_role
 #  architectures = var.lambda_iam_activity_logs_architectures   # requires aws provider 3.61
   handler       = "src/handler.s3Collector"
-  runtime       = "nodejs18.x"
+  runtime       = "nodejs20.x"
   memory_size   = var.lambda_iam_activity_memory_size
   timeout       = var.lambda_iam_activity_timeout
   s3_bucket     = local.lambda_source_code_bucket
