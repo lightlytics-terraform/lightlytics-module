@@ -54,7 +54,7 @@ variable "flow_logs_bucket_lifecycle_rule" {
       id = "purge"
       prefix = "AWSLogs/"
       status = "Enabled"
-      days = 1
+      days = 360
     }
   ]
 }
