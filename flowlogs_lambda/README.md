@@ -1,12 +1,12 @@
-Lightlytics Network Traffic Activity (Flow Logs) Terraform Module
+Stream.Security Network Traffic Activity (Flow Logs) Terraform Module
 =================================================================
-This module is in charge of creating VPC flow logs with a custom format and sending it over to Lightlytics. 
+This module is in charge of creating VPC flow logs with a custom format and sending it over to Stream.Security. 
 Integrating with this module will help you analyze and troubleshoot network traffic activity and quickly identify issues in your cloud environments using enriched and detailed logs across VPCs, services, clusters, workloads, network components, and much more.
 
 
 Requirements
 ------------
-- Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
+- Must be used with Stream.Security [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
 - Must be used with [basic integration](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration) module while adding the following variable: `enable_cloudtrail = true`
 
 
@@ -29,9 +29,9 @@ Inputs
 ------
 | Variable Name                     | Description                                                                | Notes                                                       | Type           | Required? | Default |
 |:----------------------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------|:---------------|:----------|:--------|
-| environment                       | Your organization name from the URL                                        | Only the name, e.g mike from `https://mike.lightlytics.com` | `string`       | Yes       | n/a     |
-| lightlytics_collection_token      | Lightlytics collection token          									 | Taken from Lightlytics provider module                       | `string`       | Yes       | n/a     |
-| lightlytics_flowlogs_role         | Lightlytics role arn                                                       |															   | `string`       | Yes       | n/a     |
+| environment                       | Your organization name from the URL                                        | Only the name, e.g mike from `https://mike.streamsec.io` | `string`       | Yes       | n/a     |
+| lightlytics_collection_token      | Stream.Security collection token          									 | Taken from Stream.Security provider module                       | `string`       | Yes       | n/a     |
+| lightlytics_flowlogs_role         | Stream.Security role arn                                                       |															   | `string`       | Yes       | n/a     |
 | vpc_flowlogs_ids					| List of VPC IDs for creating flowlogs                                      |   														   | `list(string)` | No        | n/a     |
 | create_new_flowlogs_bucket		| Creates new S3 bucket to publish flow logs data to                         |                                                             | `bool`         | No        | `false` |
 | flowlogs_bucket_name              | Your existing S3 bucket flow logs are published to                         | Required if `create_new_flowlogs_bucket` set to false       | `string`       | No        | n/a     |    
@@ -52,21 +52,20 @@ On apply:
 - Create trigger in the Lambda function
 
 On destroy:
-- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+- Delete all above resources including disconnecting the AWS account from Stream.Security platform
 
 
 Documentation
 -------------
-If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
+If you're new to Stream.Security and want to get started, feel free to [contact us](https://www.stream.security/contact-us) or checkout our [documentation](https://docs.streamsec.io/) website.
 
 
 Community
 ---------
-- Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
+- Comming soon...
 
 
 Getting Help
 ------------
 Please use these resources for getting help:
-- [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
-- Email: support@lightlytics.com
+- Email: support@stream.security

@@ -1,18 +1,18 @@
-Connect AWS Account to Lightlytics Terraform Module
+Connect AWS Account to Stream.Security Terraform Module
 ===================================================
-A terraform module for connecting AWS account to [Lightlytics](https://www.lightlytics.com/) and enabling [real-time events](https://www.lightlytics.com/events) within the account's region.
+A terraform module for connecting AWS account to [Stream.Security](https://www.stream.security/) and enabling [real-time events](https://www.stream.security/events) within the account's region.
 
 
 Prerequisites
 -------------
-- A Lightlytics account
+- A Stream.Security account
 - Terraform CLI
 - AWS credentials configured for use with Terraform
 
 
 Requirements
 ------------
-- Must be used with Lightlytics Terraform [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
+- Must be used with Stream.Security Terraform [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git) module
 
 
 Usage
@@ -102,57 +102,57 @@ Inputs
 ------
 | Variable Name                      | Description                                                                | Notes                                               		   | Type           | Required? | Default |
 |:-----------------------------------|:---------------------------------------------------------------------------|:------------------------------------------------------------|:---------------|:--------- |:--------|
-| host                               | Your environment URL including https://                                    | e.g `https://org.lightlytics.com`                   		   | `string`       | Yes       | n/a     |
-| username                           | Your Lightlytics user Email                                                |                                                     		   | `string`       | Yes       | n/a     |
-| password                           | Your Lightlytics user password                                             |                                                     		   | `string`       | Yes       | n/a     |
-| workspace_id                       | Can be obtained from Lightlytics platform                                  | Will use default workspace in case not specified   		   | `string`       | No        | n/a     |
+| host                               | Your environment URL including https://                                    | e.g `https://org.streamsec.io`                   		   | `string`       | Yes       | n/a     |
+| username                           | Your Stream.Security user Email                                                |                                                     		   | `string`       | Yes       | n/a     |
+| password                           | Your Stream.Security user password                                             |                                                     		   | `string`       | Yes       | n/a     |
+| workspace_id                       | Can be obtained from Stream.Security platform                                  | Will use default workspace in case not specified   		   | `string`       | No        | n/a     |
 | cloud_account_id                   | Your Cloud Provider account ID                                             |                       			                 		   | `string`       | Yes       | n/a     |
-| display_name                       | Your integration display name within Lightlytics platform                  |                                                  		   | `string`       | No       | n/a     |
-| stack_region                       | The primary region where Lightlytics read access resources will be created |                                                   		   | `string`       | Yes       | n/a     |
+| display_name                       | Your integration display name within Stream.Security platform                  |                                                  		   | `string`       | No       | n/a     |
+| stack_region                       | The primary region where Stream.Security read access resources will be created |                                                   		   | `string`       | Yes       | n/a     |
 | cloud_regions                      | List of desired regions to be scanned                                      | us-east-1 region is mandatory for the integration  		   | `list(string)` | Yes       | n/a     | 
-| environment                        | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.lightlytics.com` | `string`       | Yes       | n/a     |
-| Lightlytics_internal_accountID     | Lightlytics internal account ID       								     |                                                             | `string`       | Yes       | n/a     |
-| lightlytics_account_externalID     | Lightlytics external account ID        									 |                                                             | `string`       | Yes       | n/a     |
-| lightlytics_auth_token             | Lightlytics authentocation token        									 |                                                             | `string`       | Yes       | n/a     | 
-| enable_cloudtrail                  | Enables Lightlytics real-time events                                       |															   | `bool`         | No        | `true`  |
+| environment                        | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.streamsec.io` | `string`       | Yes       | n/a     |
+| Lightlytics_internal_accountID     | Stream.Security internal account ID       								     |                                                             | `string`       | Yes       | n/a     |
+| lightlytics_account_externalID     | Stream.Security external account ID        									 |                                                             | `string`       | Yes       | n/a     |
+| lightlytics_auth_token             | Stream.Security authentocation token        									 |                                                             | `string`       | Yes       | n/a     | 
+| enable_cloudtrail                  | Enables Stream.Security real-time events                                       |															   | `bool`         | No        | `true`  |
 | create_cloud_trail                 | Creates a CloudTrail to capture all compatible management events           |                                                             | `bool`         | No        | `false` |
-| enable_flowlogs                    | Enables Lightlytics network traffic activity (VPC flow logs)               |															   | `bool`         | No        | `true`  |
-| enable_iam_activity                | Enables Lightlytics identity activity (IAM logs)							 |															   | `bool`         | No        | `true`  |
+| enable_flowlogs                    | Enables Stream.Security network traffic activity (VPC flow logs)               |															   | `bool`         | No        | `true`  |
+| enable_iam_activity                | Enables Stream.Security identity activity (IAM logs)							 |															   | `bool`         | No        | `true`  |
 | s3_force_destroy                   | Deletes the created S3 bucket upon destroy     						     |															   | `bool`         | No        | `true`  |
-| lightlytics_collection_token       | Lightlytics collection token          								     |                                                             | `int`          | Yes       | n/a     |
+| lightlytics_collection_token       | Stream.Security collection token          								     |                                                             | `int`          | Yes       | n/a     |
 | lightlytics_cloudwatch_role        | Lightlytic CloudWatch role arn         									 |                                                             | `string`       | Yes       | n/a     |
-| lightlytics_flowlogs_role          | Lightlytics role arn                                                       |															   | `string`       | Yes       | n/a     |
+| lightlytics_flowlogs_role          | Stream.Security role arn                                                       |															   | `string`       | Yes       | n/a     |
 | vpc_flowlogs_ids					              | List of VPC IDs for creating flowlogs                                      |   														   | `list(string)` | No        | n/a     |
 | create_new_flowlogs_bucket		       | Creates new S3 bucket to publish flow logs data to                         |                                                             | `bool`         | No        | `false` |
 | flowlogs_bucket_name               | Your existing S3 bucket flow logs are published to                         | Required if `create_new_flowlogs_bucket` set to false       | `string`       | No        | n/a     | 
-| lightlytics_iam_activity_role      | Lightlytics IAM Activity role arn            								 |                                                             | `string`       | Yes       | n/a     |
+| lightlytics_iam_activity_role      | Stream.Security IAM Activity role arn            								 |                                                             | `string`       | Yes       | n/a     |
 | iam_activity_bucket_name           | Your S3 bucket name storing CloudTrail events 							 |                                                             | `string`       | Yes       | n/a     |
 
 
-Lightlytics Featured Products
+Stream.Security Featured Products
 =============================
 
-[Connect AWS Account to Lightlytics Terraform Module (basic_integration)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration#lightlytics-terraform-module---basic-integration)
+[Connect AWS Account to Stream.Security Terraform Module (basic_integration)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/basic_integration#lightlytics-terraform-module---basic-integration)
 -----------------------------------------------------------------------
-- This module connects your AWS account to [Lightlytics](https://www.lightlytics.com/) and triggers your account initial scan.
+- This module connects your AWS account to [Stream.Security](https://www.stream.security/) and triggers your account initial scan.
 
 
-[Lightlytics Real-Time Events Collection Terraform Module (collection_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/collection_lambda#lightlytics-real-time-events-collection-terraform-module)
+[Stream.Security Real-Time Events Collection Terraform Module (collection_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/collection_lambda#lightlytics-real-time-events-collection-terraform-module)
 ----------------------------------------------------------------------------
-- This module enables Lightlytics to receive real-time events of your AWS account based on AWS CloudWatch. Integrating with this module will help you track cloud configuration changes with a complete context of who, what, where, and when while providing impact analysis of your cloud environment in real time.
+- This module enables Stream.Security to receive real-time events of your AWS account based on AWS CloudWatch. Integrating with this module will help you track cloud configuration changes with a complete context of who, what, where, and when while providing impact analysis of your cloud environment in real time.
 
 
-[Lightlytics Network Traffic Activity (Flow Logs) Terraform Module (flowlogs_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/flowlogs_lambda#lightlytics-network-traffic-activity-flow-logs-terraform-module)
+[Stream.Security Network Traffic Activity (Flow Logs) Terraform Module (flowlogs_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/flowlogs_lambda#lightlytics-network-traffic-activity-flow-logs-terraform-module)
 -----------------------------------------------------------------------------------
-- This module is in charge of creating VPC flow logs with a custom format and sending it over to Lightlytics. Integrating with this module will help you analyze and troubleshoot network traffic activity and quickly identify issues in your cloud environments using enriched and detailed logs across VPCs, services, clusters, workloads, network components, and much more.
+- This module is in charge of creating VPC flow logs with a custom format and sending it over to Stream.Security. Integrating with this module will help you analyze and troubleshoot network traffic activity and quickly identify issues in your cloud environments using enriched and detailed logs across VPCs, services, clusters, workloads, network components, and much more.
 
 
-[Lightlytics Identity Activity (IAM Logs) Terraform Module (iam_activity_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/iam_activity_lambda#lightlytics-identity-activity-iam-logs-terraform-module)
+[Stream.Security Identity Activity (IAM Logs) Terraform Module (iam_activity_lambda)](https://github.com/lightlytics-terraform/lightlytics-module/tree/main/iam_activity_lambda#lightlytics-identity-activity-iam-logs-terraform-module)
 -------------------------------------------------------------------------------
 - This module creates and collects CloudTrail logs to provide visibility of how identities are being assumed and used across your AWS environment. Integrating with this module will help you monitor and analyze any identity (Identity Access Management - IAM) activity in your account with automatic correlation to your cloud resources.
 
 
-Lightlytics Cost
+Stream.Security Cost
 ----------------
 - Coming soon...
 
@@ -163,13 +163,17 @@ Lightlytics Cost
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 3.70.0 |
 
 
+Documentation
+-------------
+If you're new to Stream.Security and want to get started, feel free to [contact us](https://www.stream.security/contact-us) or checkout our [documentation](https://docs.streamsec.io/) website.
+
+
 Community
 ---------
-- Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
+- Comming soon...
 
 
 Getting Help
 ------------
 Please use these resources for getting help:
-- [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
-- Email: support@lightlytics.com
+- Email: support@stream.security
