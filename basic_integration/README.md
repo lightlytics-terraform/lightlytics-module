@@ -1,11 +1,11 @@
-Lightlytics Terraform Module - Basic Integration
+Stream.Security Terraform Module - Basic Integration
 ===========
-This module is in charge of connecting your AWS account to your Lightlytics workspace, and triggering your cloud account initial scan.
+This module is in charge of connecting your AWS account to your Stream.Security workspace, and triggering your cloud account initial scan.
 
 
 Requirements
 ------------
-- Must be used with Lightlytics [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git)
+- Must be used with Stream.Security [provider](https://github.com/lightlytics-terraform/lightlytics-provider.git)
 
 
 Usage
@@ -25,11 +25,11 @@ Inputs
 ------
 | Variable Name                      | Description                             									 | Notes                                                       | Type     | Required? | Default |
 |:-----------------------------------| :------------------------------------------------------------------------- | :---------------------------------------------------------- |:---------|:--------- |:--------|
-| environment                        | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.lightlytics.com` | `string` | Yes       | n/a     |
+| environment                        | Your organization name from the URL     									 | Only the name, e.g mike from `https://mike.streamsec.io` | `string` | Yes       | n/a     |
 | cloud_account_id                   | Your Cloud Provider account ID          									 |                                                             | `string` | Yes       | n/a     |
-| Lightlytics_internal_accountID     | Lightlytics internal account ID       								     |                                                             | `string` | Yes       | n/a     |
-| lightlytics_account_externalID     | Lightlytics external account ID        									 |                                                             | `string` | Yes       | n/a     |
-| lightlytics_auth_token             | Lightlytics authentocation token        									 |                                                             | `string` | Yes       | n/a     | 
+| Lightlytics_internal_accountID     | Stream.Security internal account ID       								     |                                                             | `string` | Yes       | n/a     |
+| lightlytics_account_externalID     | Stream.Security external account ID        									 |                                                             | `string` | Yes       | n/a     |
+| lightlytics_auth_token             | Stream.Security authentocation token        									 |                                                             | `string` | Yes       | n/a     | 
 | create_cloud_trail                 |                                      									     |                                                             | `bool`   | No        | `false` |
 | enable_cloudtrail                  |                                     									     |															   | `bool`   | No        | `true`  |
 | enable_flowlogs                    |                                									         |															   | `bool`   | No        | `true`  |
@@ -49,21 +49,20 @@ On apply:
 - Trigger Lambda Function
 
 On destroy:
-- Delete all above resources including disconnecting the AWS account from Lightlytics platform
+- Delete all above resources including disconnecting the AWS account from Stream.Security platform
 
 
 Documentation
 -------------
-If you're new to Lightlytics and want to get started, feel free to [contact us](https://www.lightlytics.com/contact-us) or checkout our [documentation](https://docs.lightlytics.com/) website.
+If you're new to Stream.Security and want to get started, feel free to [contact us](https://www.stream.security/contact-us) or checkout our [documentation](https://docs.streamsec.io/) website.
 
 
 Community
 ---------
-- Join Lightlytics community on [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
+- Comming soon...
 
 
 Getting Help
 ------------
 Please use these resources for getting help:
-- [Slack](https://join.slack.com/t/lightlyticscommunity/shared_invite/zt-1f7dk2yo7-xBTOU_o4tOnAjoFxfHVF8Q)
-- Email: support@lightlytics.com
+- Email: support@stream.security
