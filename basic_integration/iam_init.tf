@@ -22,8 +22,6 @@ resource "aws_iam_policy" "lightlytics-init-policy" {
     "Statement" : [
       {
         Action = [
-          "ec2:DeleteFlowLogs",
-          "ec2:CreateFlowLogs",
           "iam:ListAccountAliases",
           "ec2:DescribeFlowLogs",
           "ec2:DescribeVpcs",
@@ -34,10 +32,7 @@ resource "aws_iam_policy" "lightlytics-init-policy" {
           "logs:PutLogEvents",
           "ec2:DescribeNetworkInterfaces",
           "ec2:DescribeInstances",
-          "ec2:CreateTags",
-          "ec2:AttachNetworkInterface",
-          "ec2:CreateNetworkInterface",
-          "ec2:DeleteNetworkInterface"
+          "ec2:CreateTags"
         ],
         Effect = "Allow",
         Resource = "*"
