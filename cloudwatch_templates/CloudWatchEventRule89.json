@@ -1,6 +1,6 @@
 {
  "source": ["aws.amazonmq", "aws.apigateway", "aws.athena", "aws.autoscaling", "aws.cloudformation", "aws.cloudtrail", "aws.cognito-identity", "aws.cognito-idp", "aws.config", "aws.directconnect", "aws.directory", "aws.dms", "aws.docdb-elastic", "aws.dynamodb", "aws.ec2", "aws.ecr", "aws.ecs", "aws.eks", "aws.elasticache", "aws.elasticfilesystem", "aws.elasticloadbalancing", "aws.elasticmapreduce", "aws.es", "aws.events", "aws.firehose", "aws.fsx", "aws.glacier", "aws.glue", "aws.guardduty", "aws.iam", "aws.inspector", "aws.kafka", "aws.kendra", "aws.kinesis", "aws.kms", "aws.lambda", "aws.macie", "aws.rds", "aws.redshift", "aws.route53", "aws.s3", "aws.sagemaker", "aws.ses", "aws.sns", "aws.sqs", "aws.sso", "aws.storagegateway", "aws.wafv2", "aws.workspaces"],
   "detail": {
-     "eventName": []
+     "eventName": ["v1.compute.instanceGroups.setNamedPorts", "v1.compute.instancegroups.addinstances", "v1.compute.instancegroups.removeinstances", "v1.compute.instances.delete", "v1.compute.instances.setdeletionprotection", "v1.compute.instances.setmetadata", "v1.compute.instances.start", "v1.compute.instances.stop", "v1.compute.networks.addPeering", "v1.compute.networks.delete", "v1.compute.networks.removePeering", "v1.compute.networks.updatePeering", "v1.compute.regionInstanceGroups.insert", "v1.compute.subnetworks.delete", "v1.compute.targetHttpProxies.insert", "v1.compute.targethttpsproxies.insert", "v1.compute.urlMaps.delete", "v1.compute.urlMaps.update", "v1.compute.urlmaps.insert"]
   }
 }
