@@ -79,6 +79,6 @@ resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-global3" {
   policy_arn = aws_iam_policy.lightlytics-policy3.arn
 }
 resource "aws_iam_role_policy_attachment" "lightlytics-role-attach-security-audit" {
-  role       = aws_iam_role.this.name
+  role       = aws_iam_role.lightlytics-role.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
