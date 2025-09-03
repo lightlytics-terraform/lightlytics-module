@@ -3,7 +3,7 @@ variable "flowlogs-lambda" {
   default = {
     "stage-collection_lambda_layer" = "e1ac4ae88f17da52c54d0e3d90607a5b"
     "stage-collection_lambda_flowlogs" = "50d1189c896f480d8d71b4c9f06f6da2"
-    "prod-collection_lambda_layer" = "98919b98292d9b3ec577cb43bd280a2a"
-    "prod-collection_lambda_flowlogs" = "9cf1709dd6146fb541e090981f983c1d"
+    "prod-collection_lambda_layer" = "903c7914ee2b25bcadaf7b814fa22028"
+    "prod-collection_lambda_flowlogs" = "42f36ccb52027140918f0b5a15700c3d"
   }
 }
