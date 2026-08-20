@@ -4,6 +4,6 @@ variable "collection-lambda" {
     "stage-collection_lambda_layer" = "e1ac4ae88f17da52c54d0e3d90607a5b"
     "stage-collection_lambda_cloudwatch" = "50d1189c896f480d8d71b4c9f06f6da2"
     "prod-collection_lambda_layer" = "1e8d00c5c5513f60c336658713ee2cd5"
-    "prod-collection_lambda_cloudwatch" = "fb153ec4973ccf0fefee509484e32280"
+    "prod-collection_lambda_cloudwatch" = "1b4862cfdb37f7afd2c890a48d028656"
   }
 }
