@@ -4,6 +4,6 @@ variable "flowlogs-lambda" {
     "stage-collection_lambda_layer" = "e1ac4ae88f17da52c54d0e3d90607a5b"
     "stage-collection_lambda_flowlogs" = "50d1189c896f480d8d71b4c9f06f6da2"
     "prod-collection_lambda_layer" = "1e8d00c5c5513f60c336658713ee2cd5"
-    "prod-collection_lambda_flowlogs" = "1c36711365c18baca8e3e61769c58249"
+    "prod-collection_lambda_flowlogs" = "40b479a57d605041f1ab4ba4db0f6759"
   }
 }
